@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pesidze — Independent designer · Barcelona</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* HOME-only */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 96px 28px 28px;
+  border-bottom: 1px solid var(--ink);
+  overflow: hidden;
+}
+.hero-name { display: flex; flex-direction: column; gap: 0; }
+.hero-line { font-family: var(--display); font-size: clamp(80px, 19vw, 320px); line-height: 0.82; letter-spacing: -0.04em; text-transform: uppercase; display: block; }
+.hero-line.top { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+.hero-tag { font-family: "Instrument Serif", serif; font-style: italic; font-size: clamp(20px, 2.4vw, 32px); line-height: 1.25; max-width: 60ch; margin-top: 32px; }
+.hero-tag em { font-style: normal; font-family: var(--display); text-transform: uppercase; letter-spacing: -0.02em; font-style: italic; }
+.kinetic .letter { display: inline-block; transition: transform .35s cubic-bezier(.2,.8,.2,1), color .35s; will-change: transform; }
+.kinetic .letter.outline { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+
+.hero-foot {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: end; gap: 24px;
+  margin-top: 48px;
+}
+.hero-foot .btn:first-child { justify-self: start; }
+.hero-foot .btn:last-child { justify-self: end; }
+.hero-foot .scroll {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  text-align: center;
+  display: inline-flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: bob 1.6s ease-in-out infinite;
+}
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+.section { padding: 60px 28px; border-bottom: 1px solid var(--ink); }
+.section-head { display: grid; grid-template-columns: 1fr 2fr; gap: 28px; align-items: end; margin-bottom: 60px; }
+.section-head h2 { font-family: var(--display); font-size: clamp(48px, 8vw, 128px); line-height: 0.85; letter-spacing: -0.03em; text-transform: uppercase; }
+.section-head .num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+.work-strip { display: flex; flex-direction: column; }
+.work-row {
+  display: grid; grid-template-columns: 60px 1fr 2fr 200px 100px;
+  gap: 28px; align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--ink);
+  position: relative;
+  cursor: none;
+  transition: background .2s, color .2s, padding .3s;
+}
+.work-row:last-child { border-bottom: 1px solid var(--ink); }
+.work-row:hover { background: var(--ink); color: var(--paper); padding-inline: 28px; margin-inline: -28px; }
+.work-row .num { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; }
+.work-row .title { font-family: var(--display); font-size: clamp(24px, 3.2vw, 44px); text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; }
+.work-row .desc { font-size: 14px; max-width: 50ch; }
+.work-row .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.work-row .arrow { font-family: var(--mono); font-size: 18px; text-align: right; }
+@media (max-width: 700px) {
+  .work-row { grid-template-columns: 48px 1fr auto; grid-template-areas: "num title arrow" ". meta ." ". desc desc"; row-gap: 4px; column-gap: 16px; }
+  .work-row .num   { grid-area: num; }
+  .work-row .title { grid-area: title; }
+  .work-row .meta  { grid-area: meta; }
+  .work-row .desc  { grid-area: desc; max-width: none; }
+  .work-row .arrow { grid-area: arrow; }
+}
+
+.about-teaser { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 60px; align-items: center; }
+.about-teaser > div { min-width: 0; }
+.about-teaser .lead { font-family: var(--display); font-size: clamp(24px, 2.6vw, 38px); line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase; overflow-wrap: break-word; max-width: 100%; }
+@media (max-width: 900px) { .about-teaser { grid-template-columns: 1fr; } }
+.about-teaser .portrait {
+  aspect-ratio: 4 / 5;
+  background: repeating-linear-gradient(45deg, transparent 0 8px, rgba(10,10,10,0.06) 8px 9px), var(--paper-2);
+  border: 1px solid var(--ink);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 16px;
+  position: relative; overflow: hidden;
+}
+.about-teaser .portrait .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.about-teaser .portrait .nm { font-family: var(--display); font-size: clamp(28px, 4vw, 56px); line-height: 0.85; letter-spacing: -0.02em; text-transform: uppercase; }
+
+/* pricing teaser */
+.pricing-teaser { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; border-top: 1px solid var(--ink); padding-top: 16px; }
+.pricing-teaser > .col { border: 1px solid var(--ink); padding: 0; display: flex; flex-direction: column; position: relative; transition: background .2s, color .2s; }
+.pricing-teaser > .col:hover { background: var(--ink); color: var(--paper); }
+.pricing-teaser .pack-foot { background: var(--ink); color: var(--paper); }
+.pricing-teaser .pack-img {
+  aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(45deg, transparent 0 8px, rgba(10,10,10,0.06) 8px 9px), var(--paper-2);
+  border-bottom: 1px solid var(--ink);
+  display: flex; align-items: end; padding: 12px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+}
+.pricing-teaser > .col:hover .pack-img { color: var(--paper); border-color: var(--paper); }
+.pricing-teaser .pack-body { padding: 28px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.pricing-teaser .nm { font-family: var(--display); font-size: 28px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; }
+.pricing-teaser .num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.pricing-teaser > .col:hover .num { color: rgba(244,241,234,0.6); }
+.pricing-teaser .tg { font-family: "Instrument Serif", serif; font-style: italic; font-size: 18px; line-height: 1.2; max-width: 28ch; }
+.pricing-teaser .pack-list { list-style: none; display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid currentColor; margin-top: 4px; }
+.pricing-teaser .pack-list li { font-size: 13px; line-height: 1.4; padding-left: 18px; position: relative; }
+.pricing-teaser .pack-list li::before { content: "→"; position: absolute; left: 0; top: 0; font-family: var(--mono); font-size: 11px; }
+.pricing-teaser .pack-foot { padding: 24px 28px; border-top: 1px solid currentColor; display: flex; justify-content: space-between; align-items: end; }
+.pricing-teaser .price { font-family: var(--display); font-size: 32px; line-height: 0.9; letter-spacing: -0.02em; }
+.pricing-teaser .price small { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,241,234,0.6); display: block; margin-bottom: 4px; }
+.pricing-teaser .more { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+@media (max-width: 700px) {
+  .pricing-teaser { grid-template-columns: 1fr; }
+}
+
+.cta { padding: 120px 28px; text-align: center; position: relative; }
+.cta .super { font-family: var(--display); font-size: clamp(72px, 14vw, 240px); line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; }
+.cta .super .it { font-family: "Instrument Serif", serif; font-style: italic; text-transform: lowercase; font-weight: normal; letter-spacing: -0.02em; }
+
+.bottom-nav { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--ink); }
+.bottom-nav a { display: flex; flex-direction: column; gap: 16px; padding: 32px 28px; border-right: 1px solid var(--ink); transition: background .2s, color .2s; }
+.bottom-nav a:last-child { border-right: 0; }
+.bottom-nav a:hover { background: var(--ink); color: var(--paper); }
+.bottom-nav .n { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); }
+.bottom-nav a:hover .n { color: rgba(244,241,234,0.6); }
+.bottom-nav .t { font-family: var(--display); font-size: clamp(20px, 2.4vw, 32px); text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; }
+@media (max-width: 800px) { .bottom-nav { grid-template-columns: 1fr 1fr; } .bottom-nav a { border-bottom: 1px solid var(--ink); } }
+.cta p { margin-top: 32px; font-size: 16px; }
+.cta .btn { margin-top: 32px; }
+</style>
+</head>
+<body data-page="home">
+
+<nav class="nav"></nav>
+
+<!-- HERO -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="kinetic" id="kinetic">
+    <div class="hero-name">
+      <span class="hero-line top">NICOLE</span>
+      <span class="hero-line bot" id="word-pesidze">PESIDZE</span>
+    </div>
+    <div class="hero-tag">
+      <em>Independent</em> graphic &amp; web designer based in Barcelona &mdash; building brands, websites, menus and posters for small &amp; medium businesses around the world.
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <a href="work.html" class="btn" data-cursor="see work">See the work <span class="arrow">→</span></a>
+    <a href="#work" class="scroll" data-cursor="down">
+      Scroll
+      <span style="font-size:14px;">↓</span>
+    </a>
+    <a href="contact.html" class="btn" data-cursor="contact">Get in touch <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee invert">
+  <div class="marquee-track">
+    <span data-i18n="marq.1"></span>
+    <span class="dot"></span>
+    <span data-i18n="marq.2"></span>
+    <span class="dot"></span>
+    <span data-i18n="marq.1"></span>
+    <span class="dot"></span>
+    <span data-i18n="marq.2"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<!-- SELECTED WORK -->
+<section class="section" id="work" data-screen-label="02 Selected Work">
+  <div class="section-head">
+    <span class="num">§ 01 / Index</span>
+    <h2 data-i18n="home.section.work"></h2>
+  </div>
+  <div class="work-strip" id="home-work"></div>
+  <div style="margin-top:40px;">
+    <a href="work.html" class="btn" data-cursor="all work">View all 9 projects <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section class="section" id="about" data-screen-label="03 About">
+  <div class="section-head">
+    <span class="num">§ 02 / About</span>
+    <h2>Hi, I'm Nicole.</h2>
+  </div>
+  <div class="about-teaser">
+    <div>
+      <p class="lead reveal" data-reveal-text>Born in Georgia, raised across four countries, finally rooted in Barcelona. By day a UX designer for a New York SaaS company — by side-project, a friend to small businesses who deserve great design without agency prices.</p>
+      <p style="margin-top:24px; font-size:16px; max-width:50ch;">I work exclusively with small to medium businesses, and I dedicate hours to NGOs and companies running social or charitable causes. English fluent, Spanish basic-and-improving, translator always welcome.</p>
+      <a href="about.html" class="btn" style="margin-top:32px;" data-cursor="bio">More about me →</a>
+    </div>
+    <div class="portrait">
+      <img src="img1.jpg" alt="Nicole Pesidze" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+      <div style="position:relative;">
+        <span class="tag" style="display:block;">Nicole Shakarishvili</span>
+        <span class="nm">aka<br/>Pesidze</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE 2 -->
+<div class="marquee reverse">
+  <div class="marquee-track">
+    <span>BARCELONA</span>
+    <span class="dot"></span>
+    <span>EDITORIAL</span>
+    <span class="dot"></span>
+    <span>WEB</span>
+    <span class="dot"></span>
+    <span>POSTERS</span>
+    <span class="dot"></span>
+    <span>MENUS</span>
+    <span class="dot"></span>
+    <span>SOCIAL</span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<!-- PRICING TEASER -->
+<section class="section" id="pricing" data-screen-label="04 Pricing">
+  <div class="section-head">
+    <span class="num">§ 03 / For small &amp; medium business</span>
+    <h2 data-i18n="home.section.pricing"></h2>
+  </div>
+  <p style="font-size:18px; max-width:60ch; margin-bottom:40px;">3+ packages I offer in my spare time — transparent monthly pricing, no agency markup.</p>
+
+  <div class="pricing-teaser">
+    <a class="col" href="pricing.html#p1" data-cursor="pack 01">
+      <div class="pack-body">
+        <span class="num">PACK 01</span>
+        <span class="nm">Social Media Pack</span>
+        <span class="tg">For makers who post.</span>
+        <ul class="pack-list">
+          <li>3–4 post designs per week (your copy, you publish)</li>
+          <li>3 Stories templates</li>
+          <li>2 promo posters per month</li>
+          <li>Landing page (1 page)</li>
+          <li>Reply within 1–3 days</li>
+          <li><strong>Minimum contract: 2 months</strong></li>
+        </ul>
+      </div>
+      <div class="pack-foot">
+        <div class="price"><small>From</small>€500 / mo</div>
+        <span class="more">View pack →</span>
+      </div>
+    </a>
+    <a class="col" href="pricing.html#p2" data-cursor="pack 02">
+      <div class="pack-body">
+        <span class="num">PACK 02</span>
+        <span class="nm">Brand Starter</span>
+        <span class="tg">For new ventures.</span>
+        <ul class="pack-list">
+          <li>Brand identity (colors, type, patterns — no logo)</li>
+          <li>4 branded social media templates</li>
+          <li>Business card / letterhead</li>
+          <li>Landing page (1 page) + ongoing support</li>
+          <li>Reply within 1–3 days</li>
+          <li><strong>Minimum contract: 2 months</strong></li>
+        </ul>
+      </div>
+      <div class="pack-foot">
+        <div class="price"><small>From</small>€500 / mo</div>
+        <span class="more">View pack →</span>
+      </div>
+    </a>
+    <a class="col" href="pricing.html#p3" data-cursor="pack 03">
+      <div class="pack-body">
+        <span class="num">PACK 03</span>
+        <span class="nm">Venue Kit</span>
+        <span class="tg">For cafés, studios, salons.</span>
+        <ul class="pack-list">
+          <li>Menu or price list (up to 2 pages)</li>
+          <li>2 promo posters per month</li>
+          <li>3–4 social media designs per week</li>
+          <li>Landing page (1 page) + full site maintenance</li>
+          <li>Reply within 1–3 days</li>
+          <li><strong>Minimum contract: 2 months</strong></li>
+        </ul>
+      </div>
+      <div class="pack-foot">
+        <div class="price"><small>From</small>€500 / mo</div>
+        <span class="more">View pack →</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="margin-top:32px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); max-width: 80ch;">
+    — Free for NGOs &middot; Discount applied to businesses that donate at least 5% of their income to charity.
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-screen-label="06 CTA">
+  <div class="super">
+    Let's<br/>
+    make <span class="it">something</span><br/>
+    together.
+  </div>
+  <p data-i18n="home.ctaLead"></p>
+  <a href="contact.html" class="btn invert" data-cursor="contact"><span data-i18n="home.cta"></span></a>
+</section>
+
+<footer class="footer"></footer>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script src="i18n.js"></script>
+<script src="shell.js"></script>
+<script>
+// kinetic hero — letter scatter on hover
+(function () {
+  const word = document.getElementById('word-pesidze');
+  if (!word) return;
+  const text = word.textContent;
+  word.innerHTML = '';
+  for (const c of text) {
+    const s = document.createElement('span');
+    s.className = 'letter';
+    s.textContent = c;
+    word.appendChild(s);
+  }
+  const letters = word.querySelectorAll('.letter');
+  word.addEventListener('mousemove', (e) => {
+    const mode = word.dataset.anim || 'scatter';
+    letters.forEach((l) => {
+      const lr = l.getBoundingClientRect();
+      const cx = lr.left + lr.width / 2;
+      const cy = lr.top + lr.height / 2;
+      const dx = e.clientX - cx;
+      const dy = e.clientY - cy;
+      const dist = Math.hypot(dx, dy);
+      const max = 220;
+      if (mode === 'shake') {
+        if (dist < max) {
+          const force = (1 - dist / max) * 16;
+          l.style.transform = `translate(${(Math.random()-0.5)*force}px, ${(Math.random()-0.5)*force}px) rotate(${(Math.random()-0.5)*8}deg)`;
+        } else { l.style.transform = ''; }
+      } else if (mode === 'invert') {
+        if (dist < max) { l.classList.add('outline'); }
+        else { l.classList.remove('outline'); }
+        l.style.transform = '';
+      } else {
+        if (dist < max) {
+          const force = (1 - dist / max) * 60;
+          const angle = Math.atan2(dy, dx);
+          l.style.transform = `translate(${-Math.cos(angle) * force}px, ${-Math.sin(angle) * force}px)`;
+        } else { l.style.transform = ''; }
+      }
+    });
+  });
+  word.addEventListener('mouseleave', () => {
+    letters.forEach(l => { l.style.transform = ''; l.classList.remove('outline'); });
+  });
+  word.addEventListener('click', () => {
+    letters.forEach(l => l.classList.toggle('outline'));
+  });
+})();
+
+// home work rows
+const homeWorks = [
+  { num: '01', title: 'Cafetería Bondia', desc: 'Brand identity, menu and one-page website for a third-wave coffee bar in Gràcia.', meta: 'WEB · MENU · 2025' },
+  { num: '02', title: 'Casa Lluvia', desc: 'Editorial system and bilingual print magazine for a Barcelona literary collective.', meta: 'EDITORIAL · 2025' },
+  { num: '03', title: 'Mar de Fons NGO', desc: 'Donation landing and social campaign system for an ocean-cleanup non-profit.', meta: 'WEB · SOCIAL · 2024' },
+  { num: '04', title: 'Studio Vermut', desc: 'Wayfinding posters and social calendar for a co-working space in Poblenou.', meta: 'POSTER · SOCIAL · 2024' },
+  { num: '05', title: 'Pan & Pluma', desc: 'Long-form blog template and weekly post system for an independent writer.', meta: 'WEB · 2024' },
+];
+
+const strip = document.getElementById('home-work');
+strip.innerHTML = homeWorks.map(w => `
+  <a class="work-row" href="work.html#${w.num}" data-cursor="open">
+    <span class="num">${w.num}</span>
+    <span class="title">${w.title}</span>
+    <span class="desc">${w.desc}</span>
+    <span class="meta">${w.meta}</span>
+    <span class="arrow">→</span>
+  </a>
+`).join('');
+
+window.PESIDZE_bindCursor && window.PESIDZE_bindCursor();
+</script>
+
+<div id="tweaks-root"></div>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "fontPairing": "archivo",
+  "heroAnim": "scatter"
+}/*EDITMODE-END*/;
+
+function PesidzeTweaks() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    const root = document.documentElement;
+    const map = {
+      archivo: { display: '"Archivo Black", sans-serif', body: '"Space Grotesk", sans-serif' },
+      serif:   { display: '"Fraunces", "Times New Roman", serif',         body: '"Space Grotesk", sans-serif' },
+      mono:    { display: '"JetBrains Mono", monospace',  body: '"JetBrains Mono", monospace' }
+    };
+    const m = map[t.fontPairing] || map.archivo;
+    root.style.setProperty('--display', m.display);
+    root.style.setProperty('--body', m.body);
+  }, [t.fontPairing]);
+
+  React.useEffect(() => {
+    const word = document.getElementById('word-pesidze');
+    if (!word) return;
+    word.dataset.anim = t.heroAnim;
+  }, [t.heroAnim]);
+
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection title="Type pairing">
+        <TweakRadio label="Display family"
+          value={t.fontPairing}
+          onChange={(v) => setTweak('fontPairing', v)}
+          options={[
+            { value: 'archivo', label: 'Archivo' },
+            { value: 'serif',   label: 'Fraunces' },
+            { value: 'mono',    label: 'Mono' }
+          ]} />
+      </TweakSection>
+      <TweakSection title="Hero animation">
+        <TweakRadio label="Variant"
+          value={t.heroAnim}
+          onChange={(v) => setTweak('heroAnim', v)}
+          options={[
+            { value: 'scatter', label: 'Scatter' },
+            { value: 'invert',  label: 'Invert' },
+            { value: 'shake',   label: 'Shake' }
+          ]} />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<PesidzeTweaks />);
+</script>
+
+</body>
+</html>

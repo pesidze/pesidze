@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Pesidze</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.work-head {
+  padding: 120px 28px 60px;
+  border-bottom: 1px solid var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end;
+}
+.work-head h1 { font-family: var(--display); font-size: clamp(60px, 12vw, 200px); line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; }
+.work-head p { font-size: 18px; max-width: 40ch; }
+
+.filters {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--ink);
+  padding: 0 28px;
+  position: sticky; top: 60px;
+  background: var(--paper); z-index: 50;
+}
+.filters button {
+  padding: 18px 24px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  border-right: 1px solid var(--ink);
+  transition: background .15s, color .15s;
+}
+.filters button:hover { background: var(--ink); color: var(--paper); }
+.filters button.on { background: var(--ink); color: var(--paper); }
+
+.cases { display: flex; flex-direction: column; }
+.case {
+  border-bottom: 1px solid var(--ink);
+  padding: 80px 28px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  align-items: start;
+}
+.case.flip { grid-template-columns: 1fr 1fr; }
+.case .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.case h2 { font-family: var(--display); font-size: clamp(40px, 6vw, 88px); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 24px; }
+.case .desc { font-size: 16px; max-width: 50ch; margin-bottom: 24px; }
+.case .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.case .specs .lbl { color: var(--muted); display: block; margin-bottom: 4px; }
+.case .visual {
+  aspect-ratio: 4 / 3;
+  background: var(--paper-2);
+  border: 1px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.case .visual .label { position: absolute; bottom: 12px; left: 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); z-index: 2; }
+.case .visual .stripes { position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent 0 12px, rgba(10,10,10,0.05) 12px 13px); }
+
+/* photo placeholder visual */
+.v-photo { background: var(--paper); display: flex; align-items: center; justify-content: center; }
+.v-photo .ph-frame {
+  width: 72%; height: 74%;
+  border: 1px solid var(--ink);
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--paper-2);
+}
+.v-photo .ph-frame::before,
+.v-photo .ph-frame::after {
+  content: ""; position: absolute; background: rgba(10,10,10,0.15);
+}
+.v-photo .ph-frame::before { width: 100%; height: 1px; top: 50%; }
+.v-photo .ph-frame::after  { width: 1px; height: 100%; left: 50%; }
+.v-photo .ph-text { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+@media (max-width: 800px) {
+  .case, .work-head { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body data-page="work">
+
+<nav class="nav"></nav>
+
+<section class="work-head" data-screen-label="Work header">
+  <h1 data-i18n="work.title"></h1>
+  <p data-i18n="work.lead"></p>
+</section>
+
+<div class="filters" id="filters">
+  <button class="on" data-filter="all" data-i18n="work.filter.all"></button>
+  <button data-filter="web" data-i18n="work.filter.web"></button>
+  <button data-filter="editorial" data-i18n="work.filter.editorial"></button>
+  <button data-filter="poster" data-i18n="work.filter.poster"></button>
+  <button data-filter="menu" data-i18n="work.filter.menu"></button>
+  <button data-filter="social" data-i18n="work.filter.social"></button>
+</div>
+
+<section class="cases" id="cases"></section>
+
+<div class="marquee invert">
+  <div class="marquee-track">
+    <span>NINE PROJECTS</span><span class="dot"></span>
+    <span>2023 — 2026</span><span class="dot"></span>
+    <span>BARCELONA &amp; BEYOND</span><span class="dot"></span>
+  </div>
+</div>
+
+<section style="padding:120px 28px; text-align:center; border-top:1px solid var(--ink);">
+  <h2 style="font-family:var(--display); font-size:clamp(48px,8vw,120px); line-height:0.85; letter-spacing:-0.03em; text-transform:uppercase;">
+    Want something like this?
+  </h2>
+  <a href="contact.html" class="btn invert" style="margin-top:32px;" data-cursor="contact">Start a project →</a>
+</section>
+
+<footer class="footer"></footer>
+
+<script src="i18n.js"></script>
+<script src="shell.js"></script>
+<script>
+const cases = [
+  { id:'01', cat:['web','menu'], title:'Cafetería Bondia', client:'Bondia Coffee, Gràcia', year:'2025', role:'Identity, Menu, Web', visual:'v-menu',
+    desc:'A third-wave coffee bar in Gràcia needed an identity that could live equally on a chalkboard, a takeaway cup and a one-page website. We built a system around a single workhorse typeface and a paper-and-ink palette.' },
+  { id:'02', cat:['editorial'], title:'Casa Lluvia', client:'Casa Lluvia Collective', year:'2025', role:'Editorial design, Print', visual:'v-editorial',
+    desc:'Bilingual print magazine for a Barcelona literary collective. Twice-yearly, 96 pages, hand-bound. The grid is built around two columns that compress and expand to set pace inside long-form essays.' },
+  { id:'03', cat:['web','social'], title:'Mar de Fons', client:'Mar de Fons NGO', year:'2024', role:'Web, Donation flow, Social', visual:'v-web',
+    desc:'Donation landing and social campaign system for an ocean-cleanup non-profit. Pro-bono. The donate flow is built as a one-screen no-account checkout with a transparent breakdown of where each euro goes.' },
+  { id:'04', cat:['poster','social'], title:'Studio Vermut', client:'Studio Vermut, Poblenou', year:'2024', role:'Wayfinding, Posters, Social', visual:'v-poster',
+    desc:'Wayfinding posters and a weekly social calendar for a co-working space in Poblenou. Each room got its own oversized numeral and a recurring poster series rotates monthly with member features.' },
+  { id:'05', cat:['web'], title:'Pan & Pluma', client:'Independent writer', year:'2024', role:'Web, Templates', visual:'v-web',
+    desc:'Long-form blog template and a weekly post system for an independent writer. Reading-first: serif body, generous measure, and a tiny chrome that disappears once you scroll past the first paragraph.' },
+  { id:'06', cat:['menu','editorial'], title:'Casa Quimet', client:'Casa Quimet, Sant Antoni', year:'2024', role:'Menu, Print', visual:'v-menu',
+    desc:'Seasonal menu system for a neighbourhood vermutería that changes its dishes every fortnight. Printed in two colours on a risograph by a friend in El Raval — fast, cheap, beautiful.' },
+  { id:'07', cat:['social'], title:'Tàndem Clínica', client:'Tàndem Mental Health', year:'2024', role:'Social system', visual:'v-social',
+    desc:'A weekly Instagram and TikTok system for a mental-health clinic that wanted to talk to teenagers without being cringe. Soft palette, blunt copy, and a framework the team can run themselves.' },
+  { id:'08', cat:['poster'], title:'Festival Soroll', client:'Festival Soroll', year:'2023', role:'Posters, Programme', visual:'v-poster',
+    desc:'A poster series and printed programme for a noise-music micro-festival. Eight posters built from a single typographic system that gets louder as the night gets later.' },
+  { id:'09', cat:['web','editorial'], title:'Mosaic CMS', client:'Mosaic OS — SaaS', year:'2023', role:'UX, Design system', visual:'v-web',
+    desc:'A documentation site and content design system for a NY SaaS company (my day job). Componentised, accessible, and theme-able by every product team that ships through it.' },
+];
+
+function renderVisual() {
+  return `<div class="visual v-photo">
+    <div class="stripes"></div>
+    <div class="ph-frame"><span class="ph-text">drop photo</span></div>
+    <span class="label">[ photo ]</span>
+  </div>`;
+}
+
+const root = document.getElementById('cases');
+root.innerHTML = cases.map((c, i) => `
+  <article class="case ${i % 2 ? 'flip' : ''}" data-cat="${c.cat.join(' ')}" id="${c.id}">
+    ${i % 2
+      ? `${renderVisual()}
+         <div>
+           <div class="meta">№ ${c.id} · ${c.cat.join(' · ').toUpperCase()}</div>
+           <h2 class="reveal" data-reveal-text>${c.title}</h2>
+           <p class="desc">${c.desc}</p>
+           <div class="specs">
+             <div><span class="lbl">Client</span>${c.client}</div>
+             <div><span class="lbl">Year</span>${c.year}</div>
+             <div style="grid-column:1/-1;"><span class="lbl">Role</span>${c.role}</div>
+           </div>
+         </div>`
+      : `<div>
+           <div class="meta">№ ${c.id} · ${c.cat.join(' · ').toUpperCase()}</div>
+           <h2 class="reveal" data-reveal-text>${c.title}</h2>
+           <p class="desc">${c.desc}</p>
+           <div class="specs">
+             <div><span class="lbl">Client</span>${c.client}</div>
+             <div><span class="lbl">Year</span>${c.year}</div>
+             <div style="grid-column:1/-1;"><span class="lbl">Role</span>${c.role}</div>
+           </div>
+         </div>
+         ${renderVisual()}`
+    }
+  </article>
+`).join('');
+
+document.getElementById('filters').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  document.querySelectorAll('#filters button').forEach(x => x.classList.toggle('on', x === b));
+  const f = b.dataset.filter;
+  document.querySelectorAll('.case').forEach(c => {
+    c.style.display = (f === 'all' || c.dataset.cat.includes(f)) ? '' : 'none';
+  });
+});
+
+window.PESIDZE_bindCursor && window.PESIDZE_bindCursor();
+window.PESIDZE_setupReveal && window.PESIDZE_setupReveal();
+</script>
+</body>
+</html>

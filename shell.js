@@ -221,8 +221,6 @@
         <ul>
           <li><a href="#" data-cursor="instagram">Instagram ↗</a></li>
           <li><a href="#" data-cursor="behance">Behance ↗</a></li>
-          <li><a href="#" data-cursor="read.cv">Read.cv ↗</a></li>
-          <li><a href="#" data-cursor="linkedin">LinkedIn ↗</a></li>
         </ul>
       </div>
       <div>

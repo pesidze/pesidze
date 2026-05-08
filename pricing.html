@@ -71,6 +71,7 @@
 @media (max-width: 800px) {
   .pricing-head, .pack, .who { grid-template-columns: 1fr; gap: 32px; }
   .pack .price-card { position: static; }
+  .official-note { grid-template-columns: 1fr !important; gap: 32px !important; }
 }
 </style>
 </head>
@@ -163,10 +164,30 @@
   <p data-i18n="pricing.footnote.body"></p>
 </section>
 
+<section class="official-note" style="padding: 60px 28px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start;">
+  <div>
+    <span style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);">§ Official &amp; transparent</span>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: grid; grid-template-columns: 32px 1fr; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--ink);">
+      <span style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); padding-top: 3px;">01</span>
+      <p style="font-size: 16px; line-height: 1.5;"><strong>Fully tax-deductible.</strong> All fees paid to Pesidze qualify as a business expense and are fully deductible from your taxes under Spanish law — so the real cost to your business is lower than the price listed.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 32px 1fr; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--ink);">
+      <span style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); padding-top: 3px;">02</span>
+      <p style="font-size: 16px; line-height: 1.5;"><strong>Registered company, official invoices.</strong> I operate as a registered autónoma in Spain. Every project comes with a proper legal invoice — no cash, no grey area.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 32px 1fr; gap: 16px;">
+      <span style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); padding-top: 3px;">03</span>
+      <p style="font-size: 16px; line-height: 1.5;"><strong>Signed contract on every project.</strong> Before any work begins, we sign a straightforward service contract that protects both sides — scope, timeline, deliverables, and ownership, all in writing.</p>
+    </div>
+  </div>
+</section>
+
 <div class="marquee">
   <div class="marquee-track">
     <span>SMALL BUSINESSES</span><span class="dot"></span>
-    <span>NGOs · ALWAYS FREE</span><span class="dot"></span>
+    <span>CHARITIES · ALWAYS FREE</span><span class="dot"></span>
     <span>SOCIAL CAUSES · DISCOUNTED</span><span class="dot"></span>
   </div>
 </div>

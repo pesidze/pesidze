@@ -9,9 +9,9 @@ window.PESIDZE_I18N = {
 
   "footer.studio":    { en: "Studio", es: "Estudio", ca: "Estudi" },
   "footer.studioBody":{
-    en: "An independent design practice based in Barcelona. Working with small businesses, founders and NGOs anywhere in the world.",
-    es: "Práctica de diseño independiente con base en Barcelona. Trabajo con pequeños negocios, fundadores y ONGs en cualquier parte del mundo.",
-    ca: "Pràctica de disseny independent amb base a Barcelona. Treballant amb petits negocis, fundadors i ONGs arreu del món."
+    en: "An independent design practice based in Barcelona. Working with small businesses, founders and charities anywhere in the world.",
+    es: "Práctica de diseño independiente con base en Barcelona. Trabajo con pequeños negocios, fundadores y organizaciones benéficas en cualquier parte del mundo.",
+    ca: "Pràctica de disseny independent amb base a Barcelona. Treballant amb petits negocis, fundadors i organitzacions benèfiques arreu del món."
   },
   "footer.menu":      { en: "Menu", es: "Menú", ca: "Menú" },
   "footer.elsewhere": { en: "Elsewhere", es: "En otros sitios", ca: "Altres llocs" },
@@ -29,9 +29,9 @@ window.PESIDZE_I18N = {
     ca: "Dissenyadora gràfica i UX independent<br/>Barcelona — des de 2019"
   },
   "home.intro": {
-    en: "I help small businesses, restaurants and NGOs look as good as they are. Web first — also editorial, posters, menus and social.",
-    es: "Ayudo a pequeños negocios, restaurantes y ONGs a verse tan bien como son. Web primero — también editorial, carteles, menús y redes.",
-    ca: "Ajudo a petits negocis, restaurants i ONGs a veure's tan bé com són. Web primer — també editorial, cartells, menús i xarxes."
+    en: "I help small businesses, restaurants and charities look as good as they are. Web first — also editorial, posters, menus and social.",
+    es: "Ayudo a pequeños negocios, restaurantes y organizaciones benéficas a verse tan bien como son. Web primero — también editorial, carteles, menús y redes.",
+    ca: "Ajudo a petits negocis, restaurants i organitzacions benèfiques a veure's tan bé com són. Web primer — també editorial, cartells, menús i xarxes."
   },
   "home.scrollHint": { en: "Scroll", es: "Desliza", ca: "Desplaça" },
   "home.section.work": { en: "Selected work", es: "Trabajo seleccionado", ca: "Treball seleccionat" },
@@ -44,9 +44,9 @@ window.PESIDZE_I18N = {
   "home.aboutMore": { en: "More about me →", es: "Más sobre mí →", ca: "Més sobre mi →" },
   "home.section.pricing": { en: "Packages", es: "Paquetes", ca: "Paquets" },
   "home.pricingLead": {
-    en: "Three packages, offered at no cost or fair rates to small businesses and NGOs in Barcelona and beyond.",
-    es: "Tres paquetes, ofrecidos sin coste o a precios justos para pequeños negocios y ONGs en Barcelona y más allá.",
-    ca: "Tres paquets, oferts sense cost o a preus justos per a petits negocis i ONGs a Barcelona i més enllà."
+    en: "Three packages, offered at no cost or fair rates to small businesses and charities in Barcelona and beyond.",
+    es: "Tres paquetes, ofrecidos sin coste o a precios justos para pequeños negocios y organizaciones benéficas en Barcelona y más allá.",
+    ca: "Tres paquets, oferts sense cost o a preus justos per a petits negocis i organitzacions benèfiques a Barcelona i més enllà."
   },
   "home.cta": {
     en: "Start a project →",
@@ -98,9 +98,9 @@ window.PESIDZE_I18N = {
     ca: "Vaig néixer i créixer a Geòrgia, vaig acabar els estudis a la República Txeca amb un diploma britànic, i he passat la darrera dècada dissenyant per a petits i mitjans negocis arreu del món. De dia sóc dissenyadora UX a temps complet en una empresa SaaS de Nova York. En estones lliures vull experimentar més — i així van néixer els paquets gratuïts."
   },
   "about.p2": {
-    en: "I love Barcelona, and Spain in general. After living in four different countries, this is finally the place I can call home — and I deeply appreciate the people here who make it feel that way. I want to give back to the small businesses around me, because I know design work is expensive and hiring an agency is rarely affordable. With the free time I have, I can dedicate it to small and medium business owners at fair rates, and I am happy to put hours toward NGOs or offer discounts to companies that donate or are part of social causes.",
-    es: "Adoro Barcelona, y España en general. Después de vivir en cuatro países, este es por fin el lugar que puedo llamar hogar — y aprecio profundamente a la gente que lo hace sentir así. Quiero devolver algo a los pequeños negocios a mi alrededor, porque sé que el diseño es caro y contratar una agencia rara vez es accesible. Con el tiempo libre que tengo, puedo dedicarlo a propietarios de pequeños y medianos negocios a tarifas justas, y me alegra dedicar horas a ONGs u ofrecer descuentos a empresas que donan o forman parte de causas sociales.",
-    ca: "M'encanta Barcelona, i Espanya en general. Després de viure en quatre països, aquest és per fi el lloc que puc anomenar llar — i aprecio profundament la gent que el fa sentir així. Vull tornar alguna cosa als petits negocis del meu voltant, perquè sé que el disseny és car i contractar una agència rarament és assequible. Amb el temps lliure que tinc, puc dedicar-lo a propietaris de petits i mitjans negocis a tarifes justes, i estic encantada de dedicar hores a ONGs o oferir descomptes a empreses que donen o formen part de causes socials."
+    en: "I love Barcelona, and Spain in general. After living in four different countries, this is finally the place I can call home — and I deeply appreciate the people here who make it feel that way. I want to give back to the small businesses around me, because I know design work is expensive and hiring an agency is rarely affordable. With the free time I have, I can dedicate it to small and medium business owners at fair rates, and I am happy to put hours toward charities or offer discounts to companies that donate or are part of social causes.",
+    es: "Adoro Barcelona, y España en general. Después de vivir en cuatro países, este es por fin el lugar que puedo llamar hogar — y aprecio profundamente a la gente que lo hace sentir así. Quiero devolver algo a los pequeños negocios a mi alrededor, porque sé que el diseño es caro y contratar una agencia rara vez es accesible. Con el tiempo libre que tengo, puedo dedicarlo a propietarios de pequeños y medianos negocios a tarifas justas, y me alegra dedicar horas a organizaciones benéficas u ofrecer descuentos a empresas que donan o forman parte de causas sociales.",
+    ca: "M'encanta Barcelona, i Espanya en general. Després de viure en quatre països, aquest és per fi el lloc que puc anomenar llar — i aprecio profundament la gent que el fa sentir així. Vull tornar alguna cosa als petits negocis del meu voltant, perquè sé que el disseny és car i contractar una agència rarament és assequible. Amb el temps lliure que tinc, puc dedicar-lo a propietaris de petits i mitjans negocis a tarifes justes, i estic encantada de dedicar hores a organitzacions benèfiques o oferir descomptes a empreses que donen o formen part de causes socials."
   },
   "about.p3": {
     en: "A note on language — even though I do not yet speak much Spanish, I can communicate on basic topics and I am happy to use a translator when needed. I am fluent in English, so we can always find a way to get to the point. I am also delighted to practice my Spanish anytime — Catalan will come later, I promise.",
@@ -122,9 +122,9 @@ window.PESIDZE_I18N = {
     ca: "Gratis, just i per un motiu."
   },
   "pricing.lead": {
-    en: "Three packages I offer in my spare time. Free for small businesses and NGOs in Barcelona; fair rates everywhere else. Discounts for companies that donate or work on social causes.",
-    es: "Tres paquetes que ofrezco en mi tiempo libre. Gratis para pequeños negocios y ONGs en Barcelona; tarifas justas en cualquier otro lugar. Descuentos para empresas que donan o trabajan por causas sociales.",
-    ca: "Tres paquets que ofereixo en el meu temps lliure. Gratis per a petits negocis i ONGs a Barcelona; tarifes justes a qualsevol altre lloc. Descomptes per a empreses que donen o treballen per causes socials."
+    en: "Three packages I offer in my spare time. Free for small businesses and charities in Barcelona; fair rates everywhere else. Discounts for companies that donate or work on social causes.",
+    es: "Tres paquetes que ofrezco en mi tiempo libre. Gratis para pequeños negocios y organizaciones benéficas en Barcelona; tarifas justas en cualquier otro lugar. Descuentos para empresas que donan o trabajan por causas sociales.",
+    ca: "Tres paquets que ofereixo en el meu temps lliure. Gratis per a petits negocis i organitzacions benèfiques a Barcelona; tarifes justes a qualsevol altre lloc. Descomptes per a empreses que donen o treballen per causes socials."
   },
   "pricing.p1.name": { en: "Social Media Pack", es: "Pack Redes Sociales", ca: "Pack Xarxes Socials" },
   "pricing.p1.tag": { en: "For makers who post.", es: "Para quienes publican.", ca: "Per a qui publica." },
@@ -193,9 +193,9 @@ window.PESIDZE_I18N = {
   "pricing.applyBtn": { en: "Apply now →", es: "Solicitar →", ca: "Sol·licita →" },
   "pricing.footnote.title": { en: "Who qualifies", es: "Quién aplica", ca: "Qui aplica" },
   "pricing.footnote.body": {
-    en: "Small to medium businesses in Barcelona — free or at fair rates. Registered NGOs and not-for-profits — always free, hours permitting. Companies that actively donate or run social initiatives — automatic discount applied. Everyone else — fair, transparent rates on request.",
-    es: "Pequeños y medianos negocios en Barcelona — gratis o a tarifas justas. ONGs y entidades sin ánimo de lucro registradas — siempre gratis, según disponibilidad. Empresas que donan activamente o gestionan iniciativas sociales — descuento automático. Cualquier otro caso — tarifas justas y transparentes a consultar.",
-    ca: "Petits i mitjans negocis a Barcelona — gratis o a tarifes justes. ONGs i entitats sense ànim de lucre registrades — sempre gratis, segons disponibilitat. Empreses que donen activament o gestionen iniciatives socials — descompte automàtic. Qualsevol altre cas — tarifes justes i transparents a consultar."
+    en: "Small to medium businesses in Barcelona — free or at fair rates. Registered charities and not-for-profits — always free, hours permitting. Companies that actively donate or run social initiatives — automatic discount applied. Everyone else — fair, transparent rates on request.",
+    es: "Pequeños y medianos negocios en Barcelona — gratis o a tarifas justas. Organizaciones benéficas y entidades sin ánimo de lucro registradas — siempre gratis, según disponibilidad. Empresas que donan activamente o gestionan iniciativas sociales — descuento automático. Cualquier otro caso — tarifas justas y transparentes a consultar.",
+    ca: "Petits i mitjans negocis a Barcelona — gratis o a tarifes justes. Organitzacions benèfiques i entitats sense ànim de lucre registrades — sempre gratis, segons disponibilitat. Empreses que donen activament o gestionen iniciatives socials — descompte automàtic. Qualsevol altre cas — tarifes justes i transparents a consultar."
   },
 
   // ───── contact ─────
@@ -228,7 +228,7 @@ window.PESIDZE_I18N = {
   "contact.form.name": { en: "Your name", es: "Tu nombre", ca: "El teu nom" },
   "contact.form.email": { en: "Email", es: "Correo", ca: "Correu" },
   "contact.form.subject": { en: "I am interested in", es: "Me interesa", ca: "M'interessa" },
-  "contact.form.opt1": { en: "A free package (small business / NGO)", es: "Un paquete gratuito (pequeño negocio / ONG)", ca: "Un paquet gratuït (petit negoci / ONG)" },
+  "contact.form.opt1": { en: "A free package (charities only)", es: "Un paquete gratuito (solo organizaciones benéficas)", ca: "Un paquet gratuït (només organitzacions benèfiques)" },
   "contact.form.opt2": { en: "A paid project at fair rates", es: "Un proyecto a tarifa justa", ca: "Un projecte a tarifa justa" },
   "contact.form.opt3": { en: "Just saying hi", es: "Solo saludar", ca: "Només saludar" },
   "contact.form.message": { en: "Tell me about it", es: "Cuéntame", ca: "Explica'm" },

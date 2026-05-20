@@ -1,7 +1,7 @@
 /* shared shell — runs on every page */
 (function () {
   // ───── language ─────
-  const LANGS = ['en', 'es', 'ca'];
+  const LANGS = ['en', 'de'];
   function getLang() {
     return localStorage.getItem('pesidze.lang') || 'en';
   }
@@ -125,7 +125,7 @@
       { href: 'index.html', key: 'nav.home', match: 'home' },
       { href: 'work.html', key: 'nav.work', match: 'work' },
       { href: 'about.html', key: 'nav.about', match: 'about' },
-      { href: 'pricing.html', key: 'nav.pricing', match: 'pricing' },
+      { href: 'nonprofit.html', key: 'nav.nonprofit', match: 'nonprofit' },
       { href: 'contact.html', key: 'nav.contact', match: 'contact' },
     ];
     nav.innerHTML = `
@@ -135,8 +135,7 @@
       </ul>
       <div class="lang">
         <button data-lang="en">EN</button>
-        <button data-lang="es">ES</button>
-        <button data-lang="ca">CA</button>
+        <button data-lang="de">DE</button>
       </div>
       <button class="nav-burger" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -158,8 +157,7 @@
         </ul>
         <div class="mob-lang-row">
           <button data-lang="en">EN</button>
-          <button data-lang="es">ES</button>
-          <button data-lang="ca">CA</button>
+          <button data-lang="de">DE</button>
         </div>
       `;
       document.body.appendChild(mobileMenu);
@@ -212,7 +210,7 @@
           <li><a href="index.html" data-i18n="nav.home"></a></li>
           <li><a href="work.html" data-i18n="nav.work"></a></li>
           <li><a href="about.html" data-i18n="nav.about"></a></li>
-          <li><a href="pricing.html" data-i18n="nav.pricing"></a></li>
+          <li><a href="nonprofit.html" data-i18n="nav.nonprofit"></a></li>
           <li><a href="contact.html" data-i18n="nav.contact"></a></li>
         </ul>
       </div>
@@ -235,7 +233,7 @@
       <div class="colossal">
         <span>PESIDZE</span>
         <span class="avail">
-          Available for 3 projects as per ${new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' })} — only from small to medium size businesses in Cataluña.
+          Available for 3 projects as per ${new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' })} — small &amp; medium businesses and non-profits.
         </span>
       </div>
       <div class="legalbar">

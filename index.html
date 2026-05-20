@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pesidze — Independent designer · Barcelona</title>
+<title>Pesidze — Independent designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Instrument+Serif&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
@@ -85,34 +85,6 @@
 .about-teaser .portrait .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .about-teaser .portrait .nm { font-family: var(--display); font-size: clamp(28px, 4vw, 56px); line-height: 0.85; letter-spacing: -0.02em; text-transform: uppercase; }
 
-/* pricing teaser */
-.pricing-teaser { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; border-top: 1px solid var(--ink); padding-top: 16px; }
-.pricing-teaser > .col { border: 1px solid var(--ink); padding: 0; display: flex; flex-direction: column; position: relative; transition: background .2s, color .2s; }
-.pricing-teaser > .col:hover { background: var(--ink); color: var(--paper); }
-.pricing-teaser .pack-foot { background: var(--ink); color: var(--paper); }
-.pricing-teaser .pack-img {
-  aspect-ratio: 4 / 3;
-  background: repeating-linear-gradient(45deg, transparent 0 8px, rgba(10,10,10,0.06) 8px 9px), var(--paper-2);
-  border-bottom: 1px solid var(--ink);
-  display: flex; align-items: end; padding: 12px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
-}
-.pricing-teaser > .col:hover .pack-img { color: var(--paper); border-color: var(--paper); }
-.pricing-teaser .pack-body { padding: 28px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
-.pricing-teaser .nm { font-family: var(--display); font-size: 28px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; }
-.pricing-teaser .num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.pricing-teaser > .col:hover .num { color: rgba(244,241,234,0.6); }
-.pricing-teaser .tg { font-family: "Instrument Serif", serif; font-style: italic; font-size: 18px; line-height: 1.2; max-width: 28ch; }
-.pricing-teaser .pack-list { list-style: none; display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid currentColor; margin-top: 4px; }
-.pricing-teaser .pack-list li { font-size: 13px; line-height: 1.4; padding-left: 18px; position: relative; }
-.pricing-teaser .pack-list li::before { content: "→"; position: absolute; left: 0; top: 0; font-family: var(--mono); font-size: 11px; }
-.pricing-teaser .pack-foot { padding: 24px 28px; border-top: 1px solid currentColor; display: flex; justify-content: space-between; align-items: end; }
-.pricing-teaser .price { font-family: var(--display); font-size: 32px; line-height: 0.9; letter-spacing: -0.02em; }
-.pricing-teaser .price small { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,241,234,0.6); display: block; margin-bottom: 4px; }
-.pricing-teaser .more { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
-@media (max-width: 700px) {
-  .pricing-teaser { grid-template-columns: 1fr; }
-}
 
 .cta { padding: 80px 28px; text-align: center; position: relative; }
 .cta .super { font-family: var(--display); font-size: clamp(40px, 8vw, 160px); line-height: 0.9; letter-spacing: -0.04em; text-transform: uppercase; max-width: 100%; overflow-wrap: break-word; }
@@ -143,7 +115,7 @@
       <span class="hero-line bot" id="word-pesidze">PESIDZE</span>
     </div>
     <div class="hero-tag">
-      <em>Independent</em> graphic &amp; web designer based in Barcelona &mdash; building brands, websites, menus and posters for small &amp; medium businesses around the world.
+      <em>Independent</em> graphic &amp; web designer &mdash; building brands, websites, menus and posters for small &amp; medium businesses around the world.
     </div>
   </div>
 
@@ -197,8 +169,8 @@
   </div>
   <div class="about-teaser">
     <div>
-      <p class="lead reveal" data-reveal-text>Born in Georgia, raised across four countries, finally rooted in Barcelona. By day a UX designer for a New York SaaS company — by side-project, a friend to small businesses who deserve great design without agency prices.</p>
-      <p style="margin-top:24px; font-size:16px; max-width:50ch;">I work exclusively with small to medium businesses, and I dedicate hours to charities and companies running social causes. English fluent, Spanish basic-and-improving, translator always welcome.</p>
+      <p class="lead reveal" data-reveal-text>Born in Georgia, raised across four countries. By day a UX designer for a New York SaaS company — by side-project, a friend to small businesses who deserve great design without agency prices.</p>
+      <p style="margin-top:24px; font-size:16px; max-width:50ch;">I work with small to medium businesses and dedicate time to non-profits and social causes. English fluent, German in progress — translator always welcome. Official invoices and contracts with every project.</p>
       <a href="about.html" class="btn" style="margin-top:32px;" data-cursor="bio">More about me →</a>
     </div>
     <div class="portrait">
@@ -214,7 +186,7 @@
 <!-- MARQUEE 2 -->
 <div class="marquee reverse">
   <div class="marquee-track">
-    <span>BARCELONA</span>
+    <span>WORLDWIDE</span>
     <span class="dot"></span>
     <span>EDITORIAL</span>
     <span class="dot"></span>
@@ -243,71 +215,6 @@
   </div>
 </div>
 
-<!-- PRICING TEASER -->
-<section class="section" id="pricing" data-screen-label="04 Pricing">
-  <div class="section-head">
-    <span class="num">§ 03 / For small &amp; medium business</span>
-    <h2 data-i18n="home.section.pricing"></h2>
-  </div>
-  <!-- price + notes -->
-  <div style="display:flex; align-items:baseline; gap:16px; padding-bottom:20px; border-bottom:1px solid var(--ink); margin-bottom:16px; flex-wrap:wrap;">
-    <span style="font-family:var(--display); font-size:clamp(40px,6vw,80px); line-height:1; letter-spacing:-0.03em;">€500 / mo</span>
-    <span style="font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);">All packages</span>
-  </div>
-  <p style="font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">— Free for charities &middot; Discount for businesses donating 5%+ to social causes.</p>
-  <p style="font-size:16px; max-width:60ch; margin-bottom:40px;">Transparent monthly pricing, no agency markup. Official invoice + contract included with every project.</p>
-
-  <div class="pricing-teaser">
-    <a class="col" href="pricing.html#p1" data-cursor="pack 01">
-      <div class="pack-body">
-        <span class="num">PACK 01</span>
-        <span class="nm">Social Media Pack</span>
-        <span class="tg">For makers who post.</span>
-        <ul class="pack-list">
-          <li>3–4 post designs per week (your copy, you publish)</li>
-          <li>3 Stories templates</li>
-          <li>2 promo posters per month</li>
-          <li>Landing page (1 page)</li>
-          <li>Reply within 1–3 days</li>
-          <li><strong>Minimum contract: 2 months</strong></li>
-        </ul>
-        <span class="more" style="margin-top:auto; padding-top:16px;">View pack →</span>
-      </div>
-    </a>
-    <a class="col" href="pricing.html#p2" data-cursor="pack 02">
-      <div class="pack-body">
-        <span class="num">PACK 02</span>
-        <span class="nm">Brand Starter</span>
-        <span class="tg">For new ventures.</span>
-        <ul class="pack-list">
-          <li>Brand identity (colors, type, patterns — no logo)</li>
-          <li>4 branded social media templates</li>
-          <li>Business card / letterhead</li>
-          <li>Landing page (1 page) + ongoing support</li>
-          <li>Reply within 1–3 days</li>
-          <li><strong>Minimum contract: 2 months</strong></li>
-        </ul>
-        <span class="more" style="margin-top:auto; padding-top:16px;">View pack →</span>
-      </div>
-    </a>
-    <a class="col" href="pricing.html#p3" data-cursor="pack 03">
-      <div class="pack-body">
-        <span class="num">PACK 03</span>
-        <span class="nm">Venue Kit</span>
-        <span class="tg">For cafés, studios, salons.</span>
-        <ul class="pack-list">
-          <li>Menu or price list (up to 2 pages)</li>
-          <li>2 promo posters per month</li>
-          <li>3–4 social media designs per week</li>
-          <li>Landing page (1 page) + full site maintenance</li>
-          <li>Reply within 1–3 days</li>
-          <li><strong>Minimum contract: 2 months</strong></li>
-        </ul>
-        <span class="more" style="margin-top:auto; padding-top:16px;">View pack →</span>
-      </div>
-    </a>
-  </div>
-</section>
 
 <!-- CTA -->
 <section class="cta" data-screen-label="06 CTA">

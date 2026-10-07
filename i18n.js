@@ -1,135 +1,112 @@
-/* shared translations — EN / DE */
+/* site copy — English only */
 window.PESIDZE_I18N = {
-  // nav + footer
-  "nav.home":      { en: "Index",     de: "Index" },
-  "nav.work":      { en: "Work",      de: "Arbeiten" },
-  "nav.about":     { en: "About",     de: "Über mich" },
-  "nav.nonprofit": { en: "Non-profits", de: "Non-profits" },
-  "nav.contact":   { en: "Contact",   de: "Kontakt" },
+  "nav.home": "Index",
+  "nav.work": "Work",
+  "nav.about": "About",
+  "nav.contact": "Contact",
+  "nav.pricing": "Pricing",
 
-  "footer.studio":    { en: "Studio", de: "Studio" },
-  "footer.studioBody":{
-    en: "An independent design practice. Working with small businesses, founders and charities anywhere in the world.",
-    de: "Eine unabhängige Designpraxis. Ich arbeite mit kleinen Unternehmen, Gründern und gemeinnützigen Organisationen weltweit."
-  },
-  "footer.menu":      { en: "Menu", de: "Menü" },
-  "footer.elsewhere": { en: "Elsewhere", de: "Anderswo" },
-  "footer.legal":     { en: "Legal", de: "Rechtliches" },
-  "footer.terms":     { en: "Terms & Conditions", de: "AGB" },
-  "footer.privacy":   { en: "Privacy Policy", de: "Datenschutz" },
-  "footer.cookies":   { en: "Cookie Policy", de: "Cookie-Richtlinie" },
-  "footer.aviso":     { en: "Legal Notice", de: "Impressum" },
-  "footer.bcn":       { en: "", de: "" },
+  "footer.studio": "Studio",
+  "footer.studioBody": "An independent design practice based in Berlin. Working with small businesses, founders and NGOs anywhere in the world.",
+  "footer.menu": "Menu",
+  "footer.elsewhere": "Elsewhere",
+  "footer.legal": "Legal",
+  "footer.terms": "Terms &amp; Conditions",
+  "footer.privacy": "Privacy Policy",
+  "footer.cookies": "Cookie Policy",
+  "footer.aviso": "Impressum",
+  "footer.bcn": "Berlin / 52.5200° N, 13.4050° E",
 
   // ───── home ─────
-  "home.role": {
-    en: "Independent graphic & UX designer<br/>est. 2019",
-    de: "Unabhängige Grafik- &amp; UX-Designerin<br/>seit 2019"
-  },
-  "home.intro": {
-    en: "I help small businesses, restaurants and charities look as good as they are. Web first — also editorial, posters, menus and social.",
-    de: "Ich helfe kleinen Unternehmen, Restaurants und gemeinnützigen Organisationen, so gut auszusehen, wie sie sind. Zuerst Web — auch Editorial, Poster, Menüs und Social Media."
-  },
-  "home.scrollHint": { en: "Scroll", de: "Scrollen" },
-  "home.section.work": { en: "Selected work", de: "Ausgewählte Arbeiten" },
-  "home.section.about": { en: "Hello", de: "Hallo" },
-  "home.aboutLead": {
-    en: "I am Nicole — a Georgian designer, raised across four countries. By day a UX designer for a New York SaaS company, by side-project a friend to small businesses who deserve great design.",
-    de: "Ich bin Nicole — eine georgische Designerin, in vier Ländern aufgewachsen. Tagsüber UX-Designerin bei einem New Yorker SaaS-Unternehmen, nebenbei eine Freundin kleiner Unternehmen, die gutes Design verdienen."
-  },
-  "home.aboutMore": { en: "More about me →", de: "Mehr über mich →" },
-  "home.section.pricing": { en: "Packages", de: "Pakete" },
-  "home.pricingLead": {
-    en: "Three packages, offered at fair rates to small businesses and charities.",
-    de: "Drei Pakete zu fairen Preisen für kleine Unternehmen und gemeinnützige Organisationen."
-  },
-  "home.cta": {
-    en: "Start a project →",
-    de: "Projekt starten →"
-  },
-  "home.ctaLead": {
-    en: "If something here resonates, I'd love to hear from you.",
-    de: "Wenn etwas davon passt, freue ich mich von dir zu hören."
-  },
+  "home.role": "Independent graphic &amp; UX designer<br/>Berlin — est. 2019",
+  "home.intro": "I help small businesses, restaurants and NGOs look as good as they are. Web first — also editorial, posters, menus and social.",
+  "home.scrollHint": "Scroll",
+  "home.section.work": "Selected work",
+  "home.section.about": "Hello",
+  "home.aboutLead": "I am Nicole — a Georgian designer, raised across four countries and now based in Berlin. By day a senior visual designer for a New York SaaS company, by side-project a friend to small businesses who deserve great design.",
+  "home.aboutMore": "More about me →",
+  "home.section.pricing": "Packages",
+  "home.pricingLead": "Three packages, offered at fair rates to small businesses and NGOs in Berlin and beyond.",
+  "home.cta": "Start a project →",
+  "home.ctaLead": "If something here resonates, I'd love to hear from you.",
 
   // marquee
-  "marq.1": {
-    en: "DESIGN FOR SMALL BUSINESSES",
-    de: "DESIGN FÜR KLEINE UNTERNEHMEN"
-  },
-  "marq.2": {
-    en: "GEORGIA · WORLDWIDE",
-    de: "GEORGIEN · WELTWEIT"
-  },
+  "marq.1": "DESIGN FOR SMALL BUSINESSES",
+  "marq.2": "BERLIN · GEORGIA · WORLD",
 
   // ───── work ─────
-  "work.title": { en: "Selected works", de: "Ausgewählte Arbeiten" },
-  "work.lead": {
-    en: "Nine projects from the last few years. Filter by craft or scroll the index.",
-    de: "Neun Projekte der letzten Jahre. Nach Disziplin filtern oder den Index durchscrollen."
-  },
-  "work.filter.all":      { en: "All",      de: "Alle" },
-  "work.filter.web":      { en: "Web",      de: "Web" },
-  "work.filter.editorial":{ en: "Editorial",de: "Editorial" },
-  "work.filter.poster":   { en: "Posters",  de: "Poster" },
-  "work.filter.menu":     { en: "Menus",    de: "Menüs" },
-  "work.filter.social":   { en: "Social",   de: "Social" },
+  "work.title": "Selected works",
+  "work.lead": "Nine projects from the last few years. Filter by craft or scroll the index.",
+  "work.filter.all": "All",
+  "work.filter.web": "Web",
+  "work.filter.editorial": "Editorial",
+  "work.filter.poster": "Posters",
+  "work.filter.menu": "Menus",
+  "work.filter.social": "Social",
 
   // ───── about ─────
-  "about.kicker": { en: "About", de: "Über mich" },
-  "about.title": {
-    en: "I am Nicole.",
-    de: "Ich bin Nicole."
-  },
-  "about.p1": {
-    en: "I was born and raised in Georgia, finished my studies in the Czech Republic with a British diploma, and have spent the last decade designing for small to medium businesses anywhere in the world. By day I am a full-time UX designer at a SaaS company in New York. By side-project, I want to experiment more — and that is exactly how the free packages were born.",
-    de: "Ich wurde in Georgien geboren und aufgewachsen, schloss mein Studium in der Tschechischen Republik mit einem britischen Diplom ab und habe das letzte Jahrzehnt damit verbracht, für kleine und mittlere Unternehmen weltweit zu designen. Tagsüber bin ich Vollzeit-UX-Designerin bei einem SaaS-Unternehmen in New York. Nebenbei möchte ich mehr experimentieren — und genau so sind die kostenlosen Pakete entstanden."
-  },
-  "about.p2": {
-    en: "I genuinely care about the work I do with small businesses and non-profits. I know design is expensive and hiring an agency is rarely affordable. With the free time I have, I dedicate it to business owners at fair rates, and I am happy to put hours toward charities or offer discounts to companies that are part of social causes. Official invoices and contracts are included with every project.",
-    de: "Mir liegt die Arbeit mit kleinen Unternehmen und gemeinnützigen Organisationen wirklich am Herzen. Ich weiß, dass Design teuer ist und eine Agentur zu beauftragen selten erschwinglich ist. Mit meiner freien Zeit widme ich mich Unternehmern zu fairen Preisen und bin froh, Stunden für gemeinnützige Zwecke zu investieren oder Unternehmen mit sozialen Anliegen Rabatte anzubieten. Offizielle Rechnungen und Verträge sind bei jedem Projekt inbegriffen."
-  },
-  "about.p3": {
-    en: "A note on language — I am fluent in English, and I am learning German. I am very happy to use a translator when needed. We will find a way.",
-    de: "Ein Hinweis zur Sprache — ich spreche Englisch fließend und lerne Deutsch. Ich nutze gerne einen Übersetzer wenn nötig. Wir finden einen Weg."
-  },
-  "about.factsTitle": { en: "Facts", de: "Fakten" },
-  "about.born":      { en: "Born",      de: "Geboren" },
-  "about.lives":     { en: "Lives",     de: "Wohnort" },
-  "about.studied":   { en: "Studied",   de: "Studium" },
-  "about.dayJob":    { en: "Day job",   de: "Hauptjob" },
-  "about.languages": { en: "Languages", de: "Sprachen" },
+  "about.kicker": "About",
+  "about.title": "I am Nicole.",
+  "about.p1": "I was born in Batumi, Georgia, studied in Prague and earned an HND in Graphic Design, and have spent the last decade designing for small to medium businesses anywhere in the world. By day I am a senior visual designer at a SaaS company in New York. By side-project, I want to experiment more — and that is exactly how the packages were born.",
+  "about.p2": "I love Berlin, and Germany in general. After living in four different countries, this is finally the place I can call home — and I deeply appreciate the people here who make it feel that way. I want to give back to the small businesses around me, because I know design work is expensive and hiring an agency is rarely affordable. With the free time I have, I can dedicate it to small and medium business owners at fair rates, and I am happy to put hours toward NGOs or offer discounts to companies that donate or are part of social causes.",
+  "about.p3": "A note on language — I work in English, and that is how projects run from first email to final handover. German is on my list, and a translator is always welcome when it helps.",
+  "about.factsTitle": "Facts",
+  "about.born": "Born",
+  "about.lives": "Lives",
+  "about.studied": "Studied",
+  "about.dayJob": "Day job",
+  "about.languages": "Languages",
+
+  // ───── pricing ─────
+  "pricing.kicker": "Pricing",
+  "pricing.title": "Fair, and for a reason.",
+  "pricing.lead": "Three packages I offer in my spare time, at fair rates for small businesses and NGOs in Berlin and beyond. Discounts for companies that donate or work on social causes.",
+  "pricing.p1.name": "Social Media Pack",
+  "pricing.p1.tag": "For makers who post.",
+  "pricing.p1.l1": "3–4 post designs per week (your copy, you publish)",
+  "pricing.p1.l2": "3 Stories templates",
+  "pricing.p1.l3": "2 promo posters per month",
+  "pricing.p1.l4": "Landing page (1 page)",
+  "pricing.p1.l5": "Reply and resolution within 1–3 days",
+  "pricing.p2.name": "Brand Starter",
+  "pricing.p2.tag": "For new ventures.",
+  "pricing.p2.l1": "Brand identity (colors, typography, patterns — no logo)",
+  "pricing.p2.l2": "4 branded social media templates",
+  "pricing.p2.l3": "Business card / letterhead",
+  "pricing.p2.l4": "Landing page (1 page) + ongoing support and updates on request",
+  "pricing.p2.l5": "Reply and resolution within 1–3 days",
+  "pricing.p3.name": "Venue Kit",
+  "pricing.p3.tag": "For cafés, studios, salons.",
+  "pricing.p3.l1": "Menu or price list (up to 2 pages)",
+  "pricing.p3.l2": "2 promo posters per month",
+  "pricing.p3.l3": "3–4 social media designs per week",
+  "pricing.p3.l4": "Landing page (1 page) + full site maintenance, content updates on request",
+  "pricing.p3.l5": "Reply and resolution within 1–3 days",
+  "pricing.includesLabel": "Includes",
+  "pricing.priceLabel": "Price",
+  "pricing.priceFree": "On application",
+  "pricing.applyBtn": "Apply now →",
+  "pricing.footnote.title": "Who qualifies",
+  "pricing.footnote.body": "Small to medium businesses in Berlin — fair rates. Registered NGOs and not-for-profits — always free, hours permitting. Companies that actively donate or run social initiatives — automatic discount applied. Everyone else — fair, transparent rates on request.",
 
   // ───── contact ─────
-  "contact.kicker": { en: "Contact", de: "Kontakt" },
-  "contact.title": {
-    en: "Let's talk.",
-    de: "Lass uns reden."
-  },
-  "contact.lead": {
-    en: "Pick whichever feels easiest. I reply within 1–3 days.",
-    de: "Wähle, was dir am einfachsten erscheint. Ich antworte innerhalb von 1–3 Tagen."
-  },
-  "contact.email":     { en: "Email",     de: "E-Mail" },
-  "contact.whatsapp":  { en: "WhatsApp",  de: "WhatsApp" },
-  "contact.phone":     { en: "Phone",     de: "Telefon" },
-  "contact.calendly":  { en: "Book a call", de: "Termin buchen" },
-  "contact.calendlyDesc": {
-    en: "20 minutes, free, no obligation. Pick a slot that fits.",
-    de: "20 Minuten, kostenlos, unverbindlich. Wähle einen passenden Slot."
-  },
-  "contact.note": {
-    en: "Quick note — I am still learning German. English is fluent and I am very happy to use a translator. We will find a way.",
-    de: "Kurzer Hinweis — ich lerne noch Deutsch. Englisch spreche ich fließend und nutze gerne einen Übersetzer. Wir finden einen Weg."
-  },
-  "contact.form.title":   { en: "Or send a message", de: "Oder eine Nachricht senden" },
-  "contact.form.name":    { en: "Your name",  de: "Dein Name" },
-  "contact.form.email":   { en: "Email",      de: "E-Mail" },
-  "contact.form.subject": { en: "I am interested in", de: "Ich interessiere mich für" },
-  "contact.form.opt1":    { en: "A free package (charities only)", de: "Ein kostenloses Paket (nur für gemeinnützige Organisationen)" },
-  "contact.form.opt2":    { en: "A paid project at fair rates", de: "Ein bezahltes Projekt zu fairen Preisen" },
-  "contact.form.opt3":    { en: "Just saying hi", de: "Nur Hallo sagen" },
-  "contact.form.message": { en: "Tell me about it", de: "Erzähl mir davon" },
-  "contact.form.send":    { en: "Send →", de: "Senden →" },
-  "contact.form.sent":    { en: "Sent! I'll be in touch within 1–3 days.", de: "Gesendet! Ich melde mich innerhalb von 1–3 Tagen." }
+  "contact.kicker": "Contact",
+  "contact.title": "Let's talk.",
+  "contact.lead": "Pick whichever feels easiest. I reply within 1–3 days.",
+  "contact.email": "Email",
+  "contact.whatsapp": "WhatsApp",
+  "contact.phone": "Phone",
+  "contact.calendly": "Book a call",
+  "contact.calendlyDesc": "20 minutes, free, no obligation. Pick a slot that fits.",
+  "contact.note": "Quick note — I work in English. German is still on my list, and I am very happy to use a translator. We will find a way.",
+  "contact.form.title": "Or send a message",
+  "contact.form.name": "Your name",
+  "contact.form.email": "Email",
+  "contact.form.subject": "I am interested in",
+  "contact.form.opt1": "A project for a small business",
+  "contact.form.opt2": "Pro-bono work for an NGO",
+  "contact.form.opt3": "Just saying hi",
+  "contact.form.message": "Tell me about it",
+  "contact.form.send": "Send →",
+  "contact.form.sent": "Sent! I'll be in touch within 1–3 days."
 };

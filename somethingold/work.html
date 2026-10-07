@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Pesidze</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.work-head {
+  padding: 120px 28px 60px;
+  border-bottom: 1px solid var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end;
+}
+.work-head h1 { font-family: var(--display); font-size: clamp(36px, 7vw, 120px); line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; }
+.work-head p { font-size: clamp(14px, 1.6vw, 18px); max-width: 40ch; }
+
+
+.cases { display: flex; flex-direction: column; }
+.case {
+  border-bottom: 1px solid var(--ink);
+  padding: clamp(40px, 6vw, 80px) clamp(16px, 3vw, 28px);
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 60px);
+  align-items: start;
+}
+.case.flip { grid-template-columns: 1fr 1fr; }
+.case .meta { font-family: var(--mono); font-size: clamp(10px, 1vw, 11px); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.case h2 { font-family: var(--display); font-size: clamp(28px, 3.5vw, 64px); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 24px; }
+.case .desc { font-size: clamp(14px, 1.4vw, 16px); max-width: 50ch; margin-bottom: 24px; }
+.case .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-family: var(--mono); font-size: clamp(10px, 1vw, 11px); letter-spacing: 0.1em; text-transform: uppercase; }
+.case .specs .lbl { color: var(--muted); display: block; margin-bottom: 4px; }
+.case .visual {
+  aspect-ratio: 4 / 3;
+  background: var(--paper-2);
+  border: 1px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.case .visual .label { position: absolute; bottom: 12px; left: 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); z-index: 2; }
+.case .visual .stripes { position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent 0 12px, rgba(10,10,10,0.05) 12px 13px); }
+
+/* photo placeholder visual */
+.v-photo { background: var(--paper); display: flex; align-items: center; justify-content: center; }
+.v-photo .ph-frame {
+  width: 72%; height: 74%;
+  border: 1px solid var(--ink);
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--paper-2);
+}
+.v-photo .ph-frame::before,
+.v-photo .ph-frame::after {
+  content: ""; position: absolute; background: rgba(10,10,10,0.15);
+}
+.v-photo .ph-frame::before { width: 100%; height: 1px; top: 50%; }
+.v-photo .ph-frame::after  { width: 1px; height: 100%; left: 50%; }
+.v-photo .ph-text { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+/* slider */
+.v-slider { position: relative; background: #000; padding: 0; overflow: hidden; }
+.v-slider .slides { display: flex; width: 100%; height: 100%; transition: transform .4s cubic-bezier(.4,0,.2,1); }
+.v-slider .slides img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; display: block; }
+.v-slider .slide-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: var(--ink); color: var(--paper);
+  font-family: var(--mono); font-size: 14px;
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 4; border: none;
+  transition: opacity .15s;
+}
+.v-slider .slide-btn:hover { opacity: 0.7; }
+.v-slider .slide-prev { left: 12px; }
+.v-slider .slide-next { right: 12px; }
+.v-slider .slide-dots {
+  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; z-index: 4;
+}
+.v-slider .slide-dots span {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(244,241,234,0.5); display: block; cursor: pointer;
+  transition: background .2s;
+}
+.v-slider .slide-dots span.on { background: var(--paper); }
+
+@media (max-width: 800px) {
+  .case, .work-head { grid-template-columns: 1fr; gap: 32px; }
+  .case.flip { grid-template-columns: 1fr; }
+  .work-head { padding: 80px 20px 40px; }
+  .case { padding: 48px 20px; }
+  .case h2 { font-size: clamp(36px, 10vw, 72px); }
+  .case .desc { max-width: 100%; }
+  .case .visual { width: 100%; max-width: 100%; }
+  .case.flip > .visual { order: 2; }
+  .case.flip > div { order: 1; }
+}
+</style>
+</head>
+<body data-page="work">
+
+<nav class="nav"></nav>
+
+<section class="work-head" data-screen-label="Work header">
+  <h1 data-i18n="work.title"></h1>
+  <p data-i18n="work.lead"></p>
+</section>
+
+
+<section class="cases" id="cases"></section>
+
+<div class="marquee invert">
+  <div class="marquee-track">
+    <span>NINE PROJECTS</span><span class="dot"></span>
+    <span>2023 — 2026</span><span class="dot"></span>
+    <span>BARCELONA &amp; BEYOND</span><span class="dot"></span>
+  </div>
+</div>
+
+<section style="padding:120px 28px; text-align:center; border-top:1px solid var(--ink);">
+  <h2 style="font-family:var(--display); font-size:clamp(48px,8vw,120px); line-height:0.85; letter-spacing:-0.03em; text-transform:uppercase;">
+    Want something like this?
+  </h2>
+  <a href="contact.html" class="btn invert" style="margin-top:32px;" data-cursor="contact">Start a project →</a>
+</section>
+
+<footer class="footer"></footer>
+
+<script src="i18n.js"></script>
+<script src="shell.js"></script>
+<script>
+const cases = [
+  { id:'01', cat:['web','branding'], title:'Elite Linkage', client:'Elite Linkage', year:'2025', role:'Brand Identity & Website Design', location:'USA', video:'https://res.cloudinary.com/ddss1ohla/video/upload/q_auto/f_auto/v1778278473/EL_xctva6.mov',
+    desc:'I designed the complete brand identity and website for Elite Linkage, a luxury concierge service that curates global connections across entertainment, real estate, travel, fashion, and lifestyle. The challenge was translating a deeply personal network — built over decades of travel and relationship-building — into a digital experience that felt exclusive, warm, and effortlessly compelling. The design draws from an editorial-luxury direction, balancing discretion with invitation across a six-page site built to do one thing: move visitors toward making their next elite connection.' },
+  { id:'02', cat:['branding'], title:'Orka', client:'Orka Real Estate', year:'2025', role:'Brand Identity · Logo · Iconography · Business Cards · Website Branding', location:'Batumi, Georgia', imgs:['orka/1.jpg','orka/2.jpg','orka/3.jpg'],
+    desc:'Orka is a real estate agency nestled in a small coastal city in Georgia — a place of sun, mountains, and sea. The brand identity captures the spirit of that setting: four symbolic icons distill the landscape into a visual language — mountain peaks, sunlight, open water, and the orca, the client\'s spirit animal. The orca references the ancient sailors who named these creatures "killer whales," evoking intelligence, power, and a deep connection to the sea. The result is a mark that feels both local and elemental, paired with a business card system that carries the same quiet confidence across every touchpoint.' },
+  { id:'03', cat:['branding','web','poster'], title:'Khaeri', client:'Khaeri Restaurant', year:'2024', role:'Brand Identity · Visual Materials · Marketing Campaigns · Art Direction', location:'Georgia', video:'https://res.cloudinary.com/ddss1ohla/video/upload/v1778278777/Screen_Recording_2026-05-08_at_16.10.10_puqolq.mov',
+    desc:'Born during the pandemic, Khaeri transformed a historic family home into an open-air sanctuary — a place where people could breathe again. Set among over 200 plant species, 50 of them unique to the region, the venue evolved into a creative destination that drew visitors from across the country. The brand identity was built to mirror this duality: rooted in heritage, alive with nature. From visual materials to marketing campaigns, every element worked to establish Khaeri as not just a restaurant, but an artistic hub and event space with a soul.' },
+  { id:'04', cat:['web','branding'], title:'Bom Dia Running', client:'Bom Dia Running Club', year:'2025', role:'Brand Identity & Landing Page Design', location:'Barcelona', video:'https://res.cloudinary.com/ddss1ohla/video/upload/v1778278721/0508_3_b6bwbe.mov',
+    desc:'A Vogue-inspired editorial landing page for a fictional Barcelona running club where pace is beside the point. Bom Dia Running is about the slow morning — the golden hour light on Las Ramblas, the rhythm of the city before it wakes, the ritual of ending a run at a historic café with a cortado in hand. The design channels the visual language of high fashion editorial: full-bleed typography, considered white space, and a tone that treats the everyday act of running as something worth dressing up. The goal isn\'t pace. It\'s a slow morning through the city, ending at a historic café.' },
+  { id:'05', cat:['branding'], title:'Saudade', client:'Saudade Café', year:'2025', role:'Brand Identity & Visual Design', location:'Barcelona — El Born', video:'https://res.cloudinary.com/ddss1ohla/video/upload/v1778278575/0508_2_wwqy3f.mov',
+    desc:'Tucked into El Born, one of Barcelona\'s most storied neighbourhoods, this small café carries something most can\'t manufacture: a genuine story. The beans come from a family farm in Espírito Santo, hand-roasted by the owner\'s parents back in Brazil and shipped across the Atlantic. On the counter, grandma\'s brigadeiros sit beside a quietly curated playlist — the kind of morning DJ set that never interrupts a conversation. The brand identity was built to honour that intimacy: a place where provenance is the product, and every cup is an act of inheritance.' },
+];
+
+let _sliderIdx = 0;
+function renderVisual(c) {
+  if (c.video) {
+    return `<div class="visual v-photo" style="background:#000; padding:0;">
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+        <source src="${c.video}" type="video/mp4">
+      </video>
+    </div>`;
+  }
+  if (c.imgs && c.imgs.length) {
+    const sid = `sl-${c.id}`;
+    return `<div class="visual v-slider" id="${sid}">
+      <div class="slides">${c.imgs.map(s => `<img src="${s}" alt="${c.title}">`).join('')}</div>
+      <button class="slide-btn slide-prev" onclick="sliderMove('${sid}',-1)">&#8592;</button>
+      <button class="slide-btn slide-next" onclick="sliderMove('${sid}',1)">&#8594;</button>
+      <div class="slide-dots">${c.imgs.map((_,i) => `<span class="${i===0?'on':''}" onclick="sliderGo('${sid}',${i})"></span>`).join('')}</div>
+    </div>`;
+  }
+  if (c.img) {
+    const ratioStyle = c.ratio ? `aspect-ratio:${c.ratio};` : '';
+    return `<div class="visual v-photo" style="background:#000; padding:0; ${ratioStyle}">
+      <img src="${c.img}" alt="${c.title}" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>`;
+  }
+  return `<div class="visual v-photo">
+    <div class="stripes"></div>
+    <div class="ph-frame"><span class="ph-text">drop photo</span></div>
+    <span class="label">[ photo ]</span>
+  </div>`;
+}
+function sliderGo(sid, idx) {
+  const el = document.getElementById(sid);
+  if (!el) return;
+  const slides = el.querySelector('.slides');
+  const total = el.querySelectorAll('.slides img').length;
+  const cur = el._idx = ((idx % total) + total) % total;
+  slides.style.transform = `translateX(-${cur * 100}%)`;
+  el.querySelectorAll('.slide-dots span').forEach((d,i) => d.classList.toggle('on', i===cur));
+}
+function sliderMove(sid, dir) {
+  const el = document.getElementById(sid);
+  sliderGo(sid, (el._idx || 0) + dir);
+}
+
+const root = document.getElementById('cases');
+root.innerHTML = cases.map((c, i) => `
+  <article class="case ${i % 2 ? 'flip' : ''}" data-cat="${c.cat.join(' ')}" id="${c.id}">
+    ${i % 2
+      ? `${renderVisual(c)}
+         <div>
+           <div class="meta">№ ${c.id} · ${c.cat.join(' · ').toUpperCase()}</div>
+           <h2 class="reveal" data-reveal-text>${c.title}</h2>
+           <p class="desc">${c.desc}</p>
+           <div class="specs">
+             <div><span class="lbl">Client</span>${c.client}</div>
+             <div><span class="lbl">Year</span>${c.year}</div>
+             ${c.location ? `<div><span class="lbl">Location</span>${c.location}</div>` : ''}
+             <div style="grid-column:1/-1;"><span class="lbl">Role</span>${c.role}</div>
+           </div>
+         </div>`
+      : `<div>
+           <div class="meta">№ ${c.id} · ${c.cat.join(' · ').toUpperCase()}</div>
+           <h2 class="reveal" data-reveal-text>${c.title}</h2>
+           <p class="desc">${c.desc}</p>
+           <div class="specs">
+             <div><span class="lbl">Client</span>${c.client}</div>
+             <div><span class="lbl">Year</span>${c.year}</div>
+             ${c.location ? `<div><span class="lbl">Location</span>${c.location}</div>` : ''}
+             <div style="grid-column:1/-1;"><span class="lbl">Role</span>${c.role}</div>
+           </div>
+         </div>
+         ${renderVisual(c)}`
+    }
+  </article>
+`).join('');
+
+
+window.PESIDZE_bindCursor && window.PESIDZE_bindCursor();
+window.PESIDZE_setupReveal && window.PESIDZE_setupReveal();
+</script>
+</body>
+</html>

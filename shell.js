@@ -1,31 +1,16 @@
 /* shared shell — runs on every page */
 (function () {
-  // ───── language ─────
-  const LANGS = ['en', 'de'];
-  function getLang() {
-    return localStorage.getItem('pesidze.lang') || 'en';
-  }
-  function setLang(l) {
-    localStorage.setItem('pesidze.lang', l);
-    applyLang();
-  }
+  // ───── copy injection (English only) ─────
   function applyLang() {
-    const l = getLang();
-    document.documentElement.setAttribute('lang', l);
+    document.documentElement.setAttribute('lang', 'en');
+    const dict = window.PESIDZE_I18N || {};
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      const dict = window.PESIDZE_I18N || {};
-      const node = dict[key];
-      if (node && node[l] != null) el.innerHTML = node[l];
+      const node = dict[el.dataset.i18n];
+      if (node == null) return;
+      el.innerHTML = typeof node === 'string' ? node : (node.en || '');
     });
-    document.querySelectorAll('.lang button, .mob-lang-row button').forEach(b => {
-      b.classList.toggle('on', b.dataset.lang === l);
-    });
-    // re-init reveal text after lang swap
     setupCharReveal();
   }
-  window.PESIDZE_setLang = setLang;
-  window.PESIDZE_getLang = getLang;
 
   // ───── cursor ─────
   const cursor = document.createElement('div');
@@ -92,18 +77,15 @@
       const text = el.textContent;
       el.dataset.revealDone = text;
       el.innerHTML = '';
+      // wrap each word so we don't break wrapping
       text.split(' ').forEach((word, wi, arr) => {
         const wrap = document.createElement('span');
         wrap.className = 'char-reveal';
         wrap.style.transitionDelay = (wi * 30) + 'ms';
         const inner = document.createElement('span');
-        inner.textContent = word;
+        inner.textContent = word + (wi < arr.length - 1 ? '\u00A0' : '');
         wrap.appendChild(inner);
         el.appendChild(wrap);
-        // space text node between spans = wrap opportunity for the browser
-        if (wi < arr.length - 1) {
-          el.appendChild(document.createTextNode(' '));
-        }
       });
     });
     const io2 = new IntersectionObserver((entries) => {
@@ -121,127 +103,21 @@
   function buildNav(activePage) {
     const nav = document.querySelector('.nav');
     if (!nav) return;
-    const items = [
-      { href: 'index.html', key: 'nav.home', match: 'home' },
-      { href: 'work.html', key: 'nav.work', match: 'work' },
-      { href: 'about.html', key: 'nav.about', match: 'about' },
-      { href: 'nonprofit.html', key: 'nav.nonprofit', match: 'nonprofit' },
-      { href: 'contact.html', key: 'nav.contact', match: 'contact' },
-    ];
-    nav.innerHTML = `
-      <a href="index.html" class="brand" data-cursor="home">PESIDZE<sup style="font-size:10px;font-family:var(--mono);margin-left:4px;">®</sup></a>
-      <ul>
-        ${items.map(i => `<li><a href="${i.href}" class="${i.match === activePage ? 'active' : ''}" data-i18n="${i.key}"></a></li>`).join('')}
-      </ul>
-      <div class="lang">
-        <button data-lang="en">EN</button>
-        <button data-lang="de">DE</button>
-      </div>
-      <button class="nav-burger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    `;
-    nav.querySelectorAll('.lang button').forEach(b => {
-      b.addEventListener('click', () => setLang(b.dataset.lang));
-    });
-
-    // mobile overlay
-    let mobileMenu = document.getElementById('nav-mobile');
-    if (!mobileMenu) {
-      mobileMenu = document.createElement('div');
-      mobileMenu.id = 'nav-mobile';
-      mobileMenu.className = 'nav-mobile';
-      mobileMenu.innerHTML = `
-        <ul class="mob-links">
-          ${items.map(i => `<li><a href="${i.href}" class="${i.match === activePage ? 'active' : ''}" data-i18n="${i.key}"></a></li>`).join('')}
-        </ul>
-        <div class="mob-lang-row">
-          <button data-lang="en">EN</button>
-          <button data-lang="de">DE</button>
-        </div>
-      `;
-      document.body.appendChild(mobileMenu);
-      mobileMenu.querySelectorAll('.mob-lang-row button').forEach(b => {
-        b.addEventListener('click', () => setLang(b.dataset.lang));
-      });
-    }
-
-    const burger = nav.querySelector('.nav-burger');
-    burger.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-      burger.style.transform = isOpen
-        ? 'rotate(0)' : '';
-      // animate lines to X
-      const [l1, l2, l3] = burger.querySelectorAll('span');
-      if (isOpen) {
-        l1.style.transform = 'translateY(8px) rotate(45deg)';
-        l2.style.opacity = '0';
-        l3.style.transform = 'translateY(-8px) rotate(-45deg)';
-      } else {
-        l1.style.transform = '';
-        l2.style.opacity = '';
-        l3.style.transform = '';
-      }
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    // close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
+    const header = document.createElement('header');
+    header.className = 'nav';
+    header.innerHTML = '<div class="wrap"><a href="index.html" class="brand">PESIDZE<sup>®</sup></a><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#speed">Performance</a></li><li><a href="security.html">Security</a></li><li><a href="index.html#work">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About us</a></li></ul><div class="nav-ctas"><a href="security.html#check" class="btn ghost">Test your website</a><a href="contact.html" class="btn">Start a project</a></div></div>';
+    nav.replaceWith(header);
   }
 
   // ───── footer ─────
   function buildFooter() {
-    const f = document.querySelector('.footer');
+    const f = document.querySelector('footer.footer, footer.foot');
     if (!f) return;
-    f.innerHTML = `
-      <div>
-        <h4 data-i18n="footer.studio"></h4>
-        <p style="font-size:14px; max-width:36ch;" data-i18n="footer.studioBody"></p>
-      </div>
-      <div>
-        <h4 data-i18n="footer.menu"></h4>
-        <ul>
-          <li><a href="index.html" data-i18n="nav.home"></a></li>
-          <li><a href="work.html" data-i18n="nav.work"></a></li>
-          <li><a href="about.html" data-i18n="nav.about"></a></li>
-          <li><a href="nonprofit.html" data-i18n="nav.nonprofit"></a></li>
-          <li><a href="contact.html" data-i18n="nav.contact"></a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-i18n="footer.elsewhere"></h4>
-        <ul>
-          <li><a href="#" data-cursor="instagram">Instagram ↗</a></li>
-          <li><a href="#" data-cursor="behance">Behance ↗</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-i18n="footer.legal"></h4>
-        <ul>
-          <li><a href="terms.html" data-i18n="footer.terms"></a></li>
-          <li><a href="privacy.html" data-i18n="footer.privacy"></a></li>
-          <li><a href="cookies.html" data-i18n="footer.cookies"></a></li>
-          <li><a href="legal.html" data-i18n="footer.aviso"></a></li>
-        </ul>
-      </div>
-      <div class="colossal">
-        <span>PESIDZE</span>
-        <span class="avail">
-          Available for 3 projects as per ${new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' })} — small &amp; medium businesses and non-profits.
-        </span>
-      </div>
-      <div class="legalbar">
-        <span>© ${new Date().getFullYear()} Nicole Shakarishvili</span>
-        <span data-i18n="footer.bcn"></span>
-        <span>v 2026.05</span>
-      </div>
-    `;
+    const tmp = document.createElement('div');
+    tmp.innerHTML = "<footer class=\"foot\"><div class=\"wrap\">\n<div class=\"foot-grid\">\n<div><h4>Studio</h4><p style=\"font-size:15px;max-width:36ch\">Pesidze is a design and engineering studio based in Berlin, building fast, secure websites for clients across Europe and beyond.</p></div>\n<div><h4>Menu</h4><ul><li><a href=\"index.html#services\">Services</a></li><li><a href=\"index.html#speed\">Performance</a></li><li><a href=\"security.html\">Security</a></li><li><a href=\"index.html#work\">Work</a></li><li><a href=\"pricing.html\">Pricing</a></li><li><a href=\"about.html\">About us</a></li><li><a href=\"contact.html\">Contact</a></li></ul></div>\n<div><h4>Legal</h4><ul><li><a href=\"terms.html\">Terms</a></li><li><a href=\"privacy.html\">Privacy</a></li><li><a href=\"cookies.html\">Cookies</a></li><li><a href=\"legal.html\">Impressum</a></li><li><a href=\"cookies.html\" data-consent-open>Cookie settings</a></li></ul></div>\n</div>\n<div class=\"bar\"><span>© <span id=\"yr\">2026</span> Pesidze</span><span>Berlin, Germany</span></div>\n</div></footer>";
+    const nf = tmp.firstElementChild;
+    const yr = nf.querySelector('#yr'); if (yr) yr.textContent = new Date().getFullYear();
+    f.replaceWith(nf);
   }
 
   // marquee duplication for seamless loop

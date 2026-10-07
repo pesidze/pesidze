@@ -1,6 +1,6 @@
 /* shared legal-page styles */
 .legal-head {
-  padding: 56px 28px 60px;
+  padding: 120px 28px 60px;
   border-bottom: 1px solid var(--ink);
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end;
 }
@@ -61,13 +61,3 @@
   .legal-head, .legal-body { grid-template-columns: 1fr; }
   .legal-toc { position: static; }
 }
-
-.skip{position:absolute;left:16px;top:-100px;z-index:1000;background:var(--ink);color:#FFFFFF;padding:14px 20px;border-radius:8px;font-weight:700;text-decoration:none}.skip:focus{top:16px}
-a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px #FFFFFF}
-.blue a:focus-visible,.green a:focus-visible,.foot a:focus-visible,.check-main a:focus-visible{outline-color:#FFFFFF;box-shadow:0 0 0 6px var(--ink)}
-.btn{min-height:48px;min-width:44px;font-size:14px}.nav ul a{display:inline-flex;align-items:center;min-height:44px}
-p a:not(.btn),li a:not(.btn):not([data-tool]){text-decoration:underline;text-underline-offset:3px}.nav a:not(.btn),.foot a,footer a,nav a{text-decoration:none!important}.nav a:not(.btn):hover,.foot a:hover,footer a:hover,nav a:hover{text-decoration:underline!important;text-underline-offset:4px}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-
-/* display headings tuned for Oswald */
-h1,h2,h3,.display,[class*="display"],.contact-head h1,.legal-head h1,.work-head h1{letter-spacing:-.005em!important;font-weight:500!important}

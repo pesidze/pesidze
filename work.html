@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work — Pesidze</title>
-<link href="assets/fonts.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="/assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 <style>
 .work-head { padding: 56px 28px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; }
 .work-head h1 { font-family: var(--display); font-size: clamp(60px, 12vw, 200px); line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; }
@@ -47,6 +47,7 @@ img,video{max-width:100%;height:auto}
 .vitals-more{height:auto!important}
 @media (max-width:760px){.sec-head{grid-template-columns:1fr!important}.stats,.vitals,.tiers,.factors,.xp,.lead-grid{grid-template-columns:1fr!important}.cmp{font-size:14px}.cmp th,.cmp td{padding:12px 8px}}
 @media (max-width:560px){.cta h2{white-space:normal!important}.person{grid-template-columns:72px minmax(0,1fr)!important}.person .ph{width:72px!important}}
+.slot-img{width:100%;height:100%;object-fit:cover;display:block}.slot-empty{width:100%;height:100%;background:var(--paper-2,#eee)}
 </style>
 </head>
 <body data-page="work">
@@ -54,7 +55,7 @@ img,video{max-width:100%;height:auto}
 
 <nav class="nav"></nav>
 
-<section id="main" class="work-head" data-screen-label="Work header">
+<section id="main" class="work-head">
   <h1 data-i18n="work.title"></h1>
   <p data-i18n="work.lead"></p>
 </section>
@@ -85,14 +86,13 @@ img,video{max-width:100%;height:auto}
   <h2 style="font-family:var(--display); font-size:clamp(48px,8vw,120px); line-height:0.85; letter-spacing:-0.03em; text-transform:uppercase;">
     Want something like this?
   </h2>
-  <a href="contact.html" class="btn invert" style="margin-top:32px;" data-cursor="contact">Start a project →</a>
+  <a href="/contact" class="btn invert" style="margin-top:32px;" data-cursor="contact">Start a project →</a>
 </section>
 
 <footer class="footer"></footer>
 
-<script src="image-slot.js"></script>
-<script src="i18n.js"></script>
-<script src="shell.js"></script>
+<script src="/i18n.js"></script>
+<script src="/shell.js"></script>
 <script>
 const cases = [
   { id:'01', cat:['web','menu'], title:'Café Bondia', client:'Bondia Coffee, Prenzlauer Berg', year:'2025', did:['Identity','Menu design','One-page site'],
@@ -153,13 +153,13 @@ root.innerHTML = cases.map((c, i) => {
     </div>`;
   const visual = `
     <div>
-      <div class="visual"><image-slot id="case-${c.id}-main" shape="rect" placeholder="Drop main image"></image-slot></div>
+      <div class="visual"><div class="slot-empty"></div></div>
       <div class="shots">
-        <div class="mini"><image-slot id="case-${c.id}-a" shape="rect" placeholder="Detail"></image-slot></div>
-        <div class="mini"><image-slot id="case-${c.id}-b" shape="rect" placeholder="Detail"></image-slot></div>
+        <div class="mini"><div class="slot-empty"></div></div>
+        <div class="mini"><div class="slot-empty"></div></div>
       </div>
     </div>`;
-  return `<article class="case" data-cat="${c.cat.join(' ')}" id="${c.id}" data-screen-label="Case ${c.id}">
+  return `<article class="case" data-cat="${c.cat.join(' ')}" id="${c.id}">
     ${i % 2 ? visual + text : text + visual}
   </article>`;
 }).join('');
@@ -185,7 +185,7 @@ document.getElementById('filters').addEventListener('click', (e) => {
 window.PESIDZE_bindCursor && window.PESIDZE_bindCursor();
 window.PESIDZE_setupReveal && window.PESIDZE_setupReveal();
 </script>
-<script src="assets/nav.js" defer></script>
-<script src="assets/consent.js" defer></script>
+<script src="/assets/nav.js" defer></script>
+<script src="/assets/consent.js" defer></script>
 </body>
 </html>

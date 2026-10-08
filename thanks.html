@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — Pesidze</title>
+<title>Thank you · Pesidze</title><meta name="robots" content="noindex">
 <meta name="description" content="Full-cycle web agency: design, frontend, backend and infrastructure. Sites built for speed and shipped with security headers configured.">
-<link href="assets/fonts.css" rel="stylesheet">
+<link href="/assets/fonts.css" rel="stylesheet">
 <template id="__bundler_thumbnail" data-bg-color="#0a0a0a"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#0a0a0a"></rect><text x="600" y="460" text-anchor="middle" font-family="Archivo Black, Helvetica, sans-serif" font-size="200" fill="#f4f1ea" letter-spacing="-8">PESIDZE</text></svg></template>
 <style>
 :root{--ink:#0a0a0a;--paper:#FCFCFC;--paper-2:#FAFAFC;--muted:#5f5b54;--muted-d:#a9a59c;--line:rgba(10,10,10,.14);--line-d:rgba(244,241,234,.16);--good:oklch(0.8 0.17 150);--bad:oklch(0.72 0.17 35);--display:"Oswald","Arial Narrow",sans-serif;--body:"Merriweather",Georgia,serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--cond:"Oswald","Arial Narrow",sans-serif;--serif:"Merriweather",Georgia,serif;--blue:#3355a8;--blue-2:#3e63c2;--yellow:#f2c418;--pad:clamp(20px,4vw,56px)}
@@ -76,7 +76,7 @@ p{text-wrap:pretty}
 .ccard ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .ccard li{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid currentColor;border-radius:999px;padding:8px 14px}
 .ccard-art{min-height:280px;border-radius:clamp(14px,1.6vw,24px);background:color-mix(in oklch,var(--fg) 8%,transparent);outline:1.5px dashed color-mix(in oklch,var(--fg) 35%,transparent);outline-offset:-1.5px;overflow:hidden}
-.ccard-art image-slot{width:100%;height:100%}
+.ccard-art img{width:100%;height:100%}
 @media (max-width:880px){.ccard{grid-template-columns:1fr;min-height:0;top:calc(80px + var(--i)*12px)}.ccard-art{aspect-ratio:4/3;min-height:0}}
 @media (prefers-reduced-motion:reduce){.ccard{transform:none!important}}
 /* speed */
@@ -147,8 +147,8 @@ p{text-wrap:pretty}
 .foot .bar{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 @media (max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.lead-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3vw,48px)}.person{display:flex;flex-direction:column;gap:16px}.person .ph{aspect-ratio:4/5;border-radius:clamp(14px,1.6vw,24px);overflow:hidden;background:var(--paper-2)}.person .ph image-slot{width:100%;height:100%}.person .role{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.person h3{font-family:var(--cond);font-weight:500;font-size:clamp(32px,3.4vw,52px);line-height:1;letter-spacing:-.01em}.person p{font-size:16px;max-width:42ch}.team-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;border-top:1px solid var(--ink);padding-top:clamp(32px,4vw,56px)}.team-row .n{font-family:var(--cond);font-weight:500;font-size:clamp(120px,18vw,260px);line-height:.8}.team-row p{font-size:clamp(18px,1.6vw,22px);max-width:44ch}@media (max-width:760px){.lead-grid{grid-template-columns:1fr}.team-row{grid-template-columns:1fr}}
-.person{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:24px;row-gap:10px;align-items:start;border-top:1px solid var(--ink);padding-top:28px}.person .ph{grid-row:1/4;width:112px;aspect-ratio:1;border-radius:12px}.person .ph image-slot{border-radius:12px}.person h3{font-size:clamp(36px,4vw,60px)}.person p{font-size:clamp(17px,1.4vw,20px);max-width:40ch}
+.lead-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3vw,48px)}.person{display:flex;flex-direction:column;gap:16px}.person .ph{aspect-ratio:4/5;border-radius:clamp(14px,1.6vw,24px);overflow:hidden;background:var(--paper-2)}.person .ph img{width:100%;height:100%}.person .role{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.person h3{font-family:var(--cond);font-weight:500;font-size:clamp(32px,3.4vw,52px);line-height:1;letter-spacing:-.01em}.person p{font-size:16px;max-width:42ch}.team-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;border-top:1px solid var(--ink);padding-top:clamp(32px,4vw,56px)}.team-row .n{font-family:var(--cond);font-weight:500;font-size:clamp(120px,18vw,260px);line-height:.8}.team-row p{font-size:clamp(18px,1.6vw,22px);max-width:44ch}@media (max-width:760px){.lead-grid{grid-template-columns:1fr}.team-row{grid-template-columns:1fr}}
+.person{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:24px;row-gap:10px;align-items:start;border-top:1px solid var(--ink);padding-top:28px}.person .ph{grid-row:1/4;width:112px;aspect-ratio:1;border-radius:12px}.person .ph img{border-radius:12px}.person h3{font-size:clamp(36px,4vw,60px)}.person p{font-size:clamp(17px,1.4vw,20px);max-width:40ch}
 .tl{list-style:none;margin-top:12px;border-top:1px solid var(--line);grid-column:2}.tl li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;padding-block:10px;border-bottom:1px solid var(--line);font-size:15px}.tl .y{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);padding-top:3px}.tl .w{color:var(--muted)}.why-list{list-style:none;border-top:1px solid var(--ink);counter-reset:w}.why-list li{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1.4fr);gap:24px;padding-block:28px;border-bottom:1px solid var(--line);align-items:start;counter-increment:w}.why-list li::before,.why-list h3,.why-list p{margin:0;text-box:trim-both cap alphabetic}.why-list p{line-height:1.45}.why-list li::before{content:counter(w,decimal-leading-zero);font-family:var(--mono);font-size:13px;color:var(--muted)}.why-list h3{font-family:var(--cond);font-weight:500;font-size:clamp(26px,2.6vw,40px);line-height:1.05;letter-spacing:-.01em}.why-list p{font-size:clamp(16px,1.3vw,19px);max-width:52ch}.xp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--ink);padding-top:28px}.xp div{display:flex;flex-direction:column;gap:10px}.xp .n{font-family:var(--cond);font-weight:500;font-size:clamp(64px,8vw,128px);line-height:.9}.xp p{font-size:16px;max-width:30ch}.stack{border-top:1px solid var(--ink)}.stack>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:24px;padding-block:20px;border-bottom:1px solid var(--line);align-items:center}.stack h4{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.stack ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}.stack li{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);border-radius:999px;padding:8px 14px}@media (max-width:760px){.why-list li{grid-template-columns:1fr;gap:12px}.xp{grid-template-columns:1fr}.stack>div{grid-template-columns:1fr}.tl{grid-column:1/-1}}
 
 .cta{padding-block:clamp(72px,9vw,140px);text-align:left;background:var(--yellow);color:var(--ink);overflow:hidden}.cta .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}.cta h2{font-family:var(--cond);font-weight:600;font-size:clamp(64px,11vw,184px);line-height:.86;letter-spacing:-.02em;text-transform:uppercase}.cta h2 span{display:block}.cta h2 span:nth-child(2){padding-left:.5em}.cta h2 span:nth-child(3){padding-left:1em}.cta p{margin:28px 0 32px;max-width:44ch;font-size:clamp(17px,1.4vw,20px)}.cta .btn{background:var(--ink);color:var(--yellow);border-color:var(--ink)}.cta .btn:hover{background:transparent;color:var(--ink)}.cta .rocket{font-size:clamp(160px,24vw,380px);line-height:1;justify-self:center;display:block;transform:rotate(-8deg);animation:rocketBob 3.2s ease-in-out infinite}@keyframes rocketBob{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-18px) rotate(-4deg)}}@media (prefers-reduced-motion:reduce){.cta .rocket{animation:none}}@media (max-width:760px){.cta .wrap{grid-template-columns:1fr}.cta .rocket{grid-row:1;justify-self:start;font-size:120px}}
@@ -183,39 +183,36 @@ img,video{max-width:100%;height:auto}
 .vitals-more{height:auto!important}
 @media (max-width:760px){.sec-head{grid-template-columns:1fr!important}.stats,.vitals,.tiers,.factors,.xp,.lead-grid{grid-template-columns:1fr!important}.cmp{font-size:14px}.cmp th,.cmp td{padding:12px 8px}}
 @media (max-width:560px){.cta h2{white-space:normal!important}.person{grid-template-columns:72px minmax(0,1fr)!important}.person .ph{width:72px!important}}
+.ty-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}.ty-side{display:flex;flex-direction:column;gap:28px}.ty-side h1{font-family:var(--cond);font-weight:500;font-size:clamp(56px,7vw,112px);line-height:.92;letter-spacing:-.01em}.ty-side .lead{font-size:clamp(18px,1.5vw,21px);max-width:42ch}.ty-steps{list-style:none;border-top:1px solid var(--ink);counter-reset:t}.ty-steps li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding-block:16px;border-bottom:1px solid var(--line);font-size:17px;counter-increment:t}.ty-steps li::before{content:counter(t,decimal-leading-zero);font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);padding-top:4px}.ty-actions{display:flex;flex-wrap:wrap;gap:12px}.ty-card{background:var(--yellow);border-radius:clamp(16px,2vw,28px);padding:clamp(24px,3.4vw,48px);display:flex;flex-direction:column;gap:24px}.ty-big{font-family:var(--cond);font-weight:600;font-size:clamp(72px,10vw,168px);line-height:.85;letter-spacing:-.02em;text-transform:uppercase}.ty-big span{display:block}.ty-big span:nth-child(2){padding-left:.4em}.ty-card p{font-size:17px;max-width:40ch}.ty-hf{display:flex;flex-wrap:wrap;align-items:center;gap:16px}.ty-hf .btn{cursor:pointer}.ty-count{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.ty-reply{font-family:var(--cond);font-weight:500;font-size:clamp(24px,2.4vw,34px);line-height:1.1;min-height:2.2em}.ty-ps{font-size:14px;border-top:1.5px solid var(--ink);padding-top:16px}.ty-big.wiggle{animation:tyW .5s ease}@keyframes tyW{0%,100%{transform:rotate(0)}25%{transform:rotate(-2deg) scale(1.02)}75%{transform:rotate(2deg) scale(1.02)}}@media (max-width:900px){.ty-grid{grid-template-columns:1fr}}
+.slot-img{width:100%;height:100%;object-fit:cover;display:block}.slot-empty{width:100%;height:100%;background:var(--paper-2,#eee)}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav"><div class="wrap"><a href="index.html" class="brand">PESIDZE<sup>®</sup></a><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#speed">Performance</a></li><li><a href="security.html">Security</a></li><li><a href="index.html#work">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About us</a></li></ul><div class="nav-ctas"><a href="security.html#check" class="btn ghost">Test your website</a><a href="contact.html" class="btn">Start a project</a></div></div></header>
+<header class="nav"><div class="wrap"><a href="/" class="brand">PESIDZE<sup>®</sup></a><ul><li><a href="/#services">Services</a></li><li><a href="/#speed">Performance</a></li><li><a href="/security">Security</a></li><li><a href="/#work">Work</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/about">About us</a></li></ul><div class="nav-ctas"><a href="/security#check" class="btn ghost">Test your website</a><a href="/contact" class="btn">Start a project</a></div></div></header>
 <main id="main">
-<section class="sec" data-screen-label="01 Contact"><div class="wrap"><div class="ct-grid">
-<div class="ct-side"><span class="eyebrow">Contact</span><h1>Let's talk about your website.</h1><p class="lead">Tell us what you have in mind, whether it's a new site, a redesign or a check-up of the one you have. We reply within 1–3 working days.</p>
-<div class="ct-mail"><span>Email us</span><a href="mailto:hi@pesidze.com">hi@pesidze.com</a></div>
-<ul class="ct-facts"><li><b>Reply</b><span>Within 1–3 working days</span></li><li><b>Based</b><span>Remote now, Berlin from 2027</span></li><li><b>Language</b><span>We work in English. German is on its way, and we're happy to use a translator in the meantime.</span></li></ul>
+<section class="sec"><div class="wrap"><div class="ty-grid">
+<div class="ty-side"><span class="eyebrow">Message received</span><h1>Wow. You actually pressed the button.</h1><p class="lead">Somewhere, a notification just went off and someone on our team gasped a little. We're not crying. You're crying.</p>
+<ol class="ty-steps"><li>We read your message. Twice. Once normally, once in a dramatic movie-trailer voice.</li><li>We hold a short, emotional team meeting about how nice your email address looks.</li><li>We reply within 1–3 working days, pretending we weren't refreshing the inbox the whole time.</li></ol>
+<div class="ty-actions"><a href="/" class="btn">Back to the homepage</a><a href="/about" class="btn ghost">Meet the people you just emailed</a></div>
 </div>
-<form class="ct-form" id="contactForm" novalidate>
-<h2>Send us a message</h2>
-<div class="ct-row"><div class="ct-field"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div><div class="ct-field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div></div>
-<div class="ct-field"><label for="cf-site">Your current website <span class="opt">(optional)</span></label><input id="cf-site" name="website" type="url" inputmode="url" placeholder="https://" autocomplete="url"></div>
-<fieldset class="ct-field"><legend>We're interested in</legend><div class="ct-chips"><label><input type="radio" name="topic" value="new" checked><span>A new website</span></label><label><input type="radio" name="topic" value="redesign"><span>A redesign</span></label><label><input type="radio" name="topic" value="report"><span>A website report</span></label><label><input type="radio" name="topic" value="other"><span>Something else</span></label></div></fieldset>
-<div class="ct-field"><label for="cf-msg">Tell us about it</label><textarea id="cf-msg" name="message" required></textarea></div>
-<p class="ct-legal">We only use your details to reply to you. More in our <a href="privacy.html">privacy policy</a>.</p>
-<div class="ct-submit"><button type="submit" class="btn">Send message →</button><p class="ct-sent" id="sentMsg" role="status" aria-live="polite" hidden>Thanks! We'll be in touch within 1–3 working days.</p></div>
-</form>
+<div class="ty-card"><h2 class="ty-big" id="tyBig"><span>Thank</span><span>you.</span></h2><p>Seriously. Out of all the contact forms on the entire internet, you chose ours. That means a lot. Probably too much.</p>
+<div class="ty-hf"><button type="button" class="btn" id="hfBtn">Send us a high-five back</button><span class="ty-count" id="hfCount">0 high-fives</span></div>
+<p class="ty-reply" id="hfReply" role="status" aria-live="polite"></p>
+<p class="ty-ps">P.S. Yes, that warm feeling is normal. It's called being a valued customer.</p>
+</div>
 </div></div></section>
 </main>
 
 <footer class="foot"><div class="wrap">
 <div class="foot-grid">
 <div><h4>Studio</h4><p style="font-size:15px;max-width:36ch">Pesidze is a design and engineering studio based in Berlin, building fast, secure websites for clients across Europe and beyond.</p></div>
-<div><h4>Menu</h4><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#speed">Performance</a></li><li><a href="security.html">Security</a></li><li><a href="index.html#work">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-<div><h4>Legal</h4><ul><li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="cookies.html">Cookies</a></li><li><a href="legal.html">Impressum</a></li><li><a href="cookies.html" data-consent-open>Cookie settings</a></li></ul></div>
+<div><h4>Menu</h4><ul><li><a href="/#services">Services</a></li><li><a href="/#speed">Performance</a></li><li><a href="/security">Security</a></li><li><a href="/#work">Work</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/about">About us</a></li><li><a href="/contact">Contact</a></li></ul></div>
+<div><h4>Legal</h4><ul><li><a href="/terms">Terms</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/cookies">Cookies</a></li><li><a href="/legal">Impressum</a></li><li><a href="/cookies" data-consent-open>Cookie settings</a></li></ul></div>
 </div>
 <div class="bar"><span>© <span id="yr">2026</span> Pesidze</span><span>Berlin, Germany</span></div>
 </div></footer>
 
-<script src="image-slot.js"></script>
 <script>
 (function(){
 document.getElementById('yr').textContent=new Date().getFullYear();
@@ -223,8 +220,8 @@ var $=function(id){return document.getElementById(id)};
 
 })();
 </script>
-<script>document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();var f=e.target;if(!f.checkValidity()){f.reportValidity();return}document.getElementById('sentMsg').hidden=false;f.reset()});</script>
-<script src="assets/nav.js" defer></script>
-<script src="assets/consent.js" defer></script>
+<script>(function(){var n=0,b=document.getElementById('hfBtn'),c=document.getElementById('hfCount'),r=document.getElementById('hfReply'),big=document.getElementById('tyBig');var m={1:'Received. Mo felt that.',2:'Okay, two. We see you.',3:'Nicole is visibly blushing.',4:'Someone just said "aww" out loud in the meeting.',5:'This is now our favourite day of the week.',7:'We printed this out and stuck it on the fridge.',10:'Please. We have websites to build.',15:'Legally we have to ask if you are okay.',25:'You are now a founding member of the Pesidze High-Five Club. There are no benefits.',50:'We are calling your mum to tell her how nice you are.'};b.addEventListener('click',function(){n++;c.textContent=n+(n===1?' high-five':' high-fives');if(m[n])r.textContent=m[n];big.classList.remove('wiggle');void big.offsetWidth;big.classList.add('wiggle')})})();</script>
+<script src="/assets/nav.js" defer></script>
+<script src="/assets/consent.js" defer></script>
 </body>
 </html>

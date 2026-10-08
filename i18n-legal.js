@@ -6,12 +6,12 @@ window.PESIDZE_LEGAL_I18N = {
 
   // ── identifying info (shown at top of every doc) ──
   "legal.owner.title": "Owner of this site",
-  "legal.owner.body": "Pesidze, a web design and development studio run by Nicole Shakarishvili · Address: [street, postal code] Berlin, Germany · Email: hi@pesidze.com · Phone: [phone] · VAT ID: [USt-IdNr.] · Legal form and register entry: [e.g. sole proprietor / GmbH, Handelsregister court and number, if registered].",
+  "legal.owner.body": "PESIDZE LLC, a web design and development studio · Owner: Jana Zinckenko · Managing director: Nicole Shakarishvili · Address: Melashvili St. 33, 6010 Batumi, Georgia · Email: hi@pesidze.com · Phone: +995 599 122 586",
 
   // ── TERMS ──
   "terms.title": "Terms &amp; Conditions",
   "terms.intro.h": "Introduction",
-  "terms.intro.p": "These terms govern access to and use of this website and any design services I (Nicole Shakarishvili, trading as Pesidze) provide. By browsing the site or commissioning a project you accept these terms in full. If you do not accept them, please do not use the site or engage my services.",
+  "terms.intro.p": "These terms govern access to and use of this website and any services provided by PESIDZE LLC (Melashvili St. 33, 6010 Batumi, Georgia), managed by Nicole Shakarishvili. By browsing the site or commissioning a project you accept these terms in full. If you do not accept them, please do not use the site or engage my services.",
   "terms.services.h": "Services",
   "terms.services.p": "I provide graphic design, web design and UX consulting services, scoped per project by quotation or offered as defined packages. The scope, deliverables, timeline and price of each engagement are agreed in writing before work begins, by email or signed proposal.",
   "terms.fees.h": "Fees &amp; payment",
@@ -30,7 +30,7 @@ window.PESIDZE_LEGAL_I18N = {
   // ── PRIVACY ──
   "privacy.title": "Privacy Policy",
   "privacy.intro.h": "Who is responsible",
-  "privacy.intro.p": "Nicole Shakarishvili (Pesidze) is the data controller for personal information collected through this website and during client engagements. You can reach me at hi@pesidze.com for any privacy question or to exercise your rights under the GDPR (Regulation EU 2016/679) and the German Federal Data Protection Act (BDSG).",
+  "privacy.intro.p": "PESIDZE LLC, Melashvili St. 33, 6010 Batumi, Georgia, represented by its managing director Nicole Shakarishvili, is the data controller for personal information collected through this website and during client engagements. You can reach me at hi@pesidze.com for any privacy question or to exercise your rights under the GDPR (Regulation EU 2016/679) and the German Federal Data Protection Act (BDSG).",
   "privacy.what.h": "What data I collect",
   "privacy.what.p": "When you visit the site, our hosting provider automatically records technical access data in server log files: IP address, date and time, page requested, referrer, browser and operating system. These logs are needed to deliver the site and keep it secure, and are deleted after [7] days. Through the contact form we collect your name, email, the option you selected and your message. From email and WhatsApp: the content you send us. From clients during a project: the information needed to deliver the work (e.g. company name, brand assets, billing details). Fonts are hosted on our own server, so no data is sent to Google or other font providers. We do not run analytics, fingerprinting, advertising trackers or social pixels. Optional categories (statistics, external media) are only ever activated after you consent in the cookie banner.",
   "privacy.why.h": "Why and on what legal basis",
@@ -62,11 +62,11 @@ window.PESIDZE_LEGAL_I18N = {
   // ── IMPRESSUM ──
   "aviso.title": "Impressum",
   "aviso.lssi.h": "Information pursuant to § 5 DDG",
-  "aviso.lssi.p": "Information pursuant to § 5 DDG: Pesidze, Nicole Shakarishvili, [street, postal code] Berlin, Germany. Contact: hi@pesidze.com, [phone]. VAT identification number under § 27a UStG: [USt-IdNr.]. [Legal form, register court and register number, if registered.] Responsible for content under § 18(2) MStV: Nicole Shakarishvili, address as above.",
+  "aviso.lssi.p": "<strong>PESIDZE</strong><br>Melashvili St. 33<br>6010 Batumi<br>Georgia<br><br>Owner: Jana Zinckenko<br>Managing director: Nicole Shakarishvili<br><br>Contact: hi@pesidze.com, +995 599 122 586<br><br>Legal form: LLC<br><br>Responsible for content under § 18(2) MStV: Nicole Shakarishvili, address as above.",
   "aviso.use.h": "Site use",
   "aviso.use.p": "Access to the site is free. Visitors agree to use it lawfully and in good faith, and to refrain from any conduct that may damage the site, its content or third parties. Linking to this site is allowed if it is done honestly and does not damage Pesidze's reputation.",
   "aviso.ip.h": "Intellectual property",
-  "aviso.ip.p": "All content of this site (texts, graphics, images, source code, layout, sound) is the property of Nicole Shakarishvili or used with permission of its rightful owners. Reproduction, distribution, public communication or transformation requires prior written authorisation, except for personal, non-commercial use that respects the author's moral rights under the German Copyright Act (UrhG).",
+  "aviso.ip.p": "All content of this site (texts, graphics, images, source code, layout, sound) is the property of PESIDZE LLC or used with permission of its rightful owners. Reproduction, distribution, public communication or transformation requires prior written authorisation, except for personal, non-commercial use that respects the author's moral rights under the German Copyright Act (UrhG).",
   "aviso.liab.h": "Disclaimer of liability",
   "aviso.liab.p": "Pesidze takes care to keep the site secure and the information accurate, but does not guarantee continuous availability nor the absence of errors. As a service provider I am responsible for my own content under general law, but not obliged to monitor third-party information. No liability is accepted for the content of external links; responsibility rests with their respective operators.",
   "aviso.law.h": "Applicable law and jurisdiction",

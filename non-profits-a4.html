@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pesidze — Non-profits (A4)</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0a0a;
+  --paper: #f4f1ea;
+  --paper-2: #ebe7dc;
+  --muted: #6b6760;
+  --display: "Archivo Black", Helvetica, Arial, sans-serif;
+  --body: "Space Grotesk", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --serif: "Instrument Serif", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #1a1a1a; -webkit-font-smoothing: antialiased; }
+.viewport { padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.a4 + .a4 { margin-top: 0; }
+
+/* A4: 210 × 297 mm */
+.a4 {
+  width: 210mm;
+  height: 297mm;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  padding: 18mm 16mm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* header */
+.head {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 10px;
+  font-family: var(--mono);
+  font-size: 10pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.head .brand { font-family: var(--display); font-size: 13pt; letter-spacing: -0.01em; }
+.head .nav { color: var(--muted); }
+
+/* eyebrow */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 12mm;
+}
+
+/* title */
+.title {
+  font-family: var(--display);
+  font-size: 64pt;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-top: 4mm;
+}
+.lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16pt;
+  line-height: 1.25;
+  max-width: 50ch;
+  margin-top: 8mm;
+}
+.legal-note {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 70ch;
+  margin-top: 5mm;
+  padding: 4mm 5mm;
+  border: 1px solid var(--ink);
+}
+
+/* stats band */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--ink);
+  margin-top: 10mm;
+}
+.stats > div {
+  padding: 5mm 4mm;
+  border-right: 1px solid var(--ink);
+}
+.stats > div:last-child { border-right: 0; }
+.stats .l {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 3mm;
+}
+.stats .v {
+  font-family: var(--display);
+  font-size: 22pt;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* sections */
+.section { margin-top: 10mm; }
+.section h2 {
+  font-family: var(--display);
+  font-size: 16pt;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  padding-bottom: 3mm;
+  border-bottom: 1px solid var(--ink);
+}
+.section h2 .num {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-right: 8mm;
+}
+.section p {
+  font-size: 10pt;
+  line-height: 1.5;
+  margin-top: 4mm;
+  text-wrap: pretty;
+}
+.section ul {
+  list-style: none;
+  margin-top: 3mm;
+}
+.section ul li {
+  font-size: 10pt;
+  line-height: 1.45;
+  padding: 2mm 0 2mm 16pt;
+  position: relative;
+  border-bottom: 1px solid rgba(10,10,10,0.12);
+}
+.section ul li:last-child { border-bottom: 0; }
+.section ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  font-family: var(--mono);
+  font-size: 9pt;
+  color: var(--muted);
+}
+.section ul li b {
+  font-weight: 500;
+  font-family: var(--display);
+  font-size: 10pt;
+  letter-spacing: -0.01em;
+  display: block;
+  margin-bottom: 1mm;
+  text-transform: uppercase;
+}
+
+/* two-col rows */
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10mm;
+  margin-top: 6mm;
+}
+
+/* CTA strip */
+.cta {
+  margin-top: auto;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6mm 8mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0;
+}
+.cta .h {
+  font-family: var(--display);
+  font-size: 22pt;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.cta .meta {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244,241,234,0.6);
+  text-align: right;
+  line-height: 1.6;
+}
+.cta .meta .v { color: var(--paper); display: block; }
+
+/* footer band */
+.foot {
+  border-top: 1px solid var(--ink);
+  padding-top: 4mm;
+  margin-top: 6mm;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* toolbar */
+.toolbar {
+  position: fixed;
+  top: 16px; left: 16px;
+  display: flex; gap: 8px;
+  z-index: 20;
+}
+.toolbar button, .toolbar a {
+  background: rgba(244,241,234,0.06);
+  color: #f4f1ea;
+  border: 1px solid rgba(244,241,234,0.18);
+  padding: 8px 14px;
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+.toolbar button:hover, .toolbar a:hover { background: rgba(244,241,234,0.14); }
+
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: var(--paper) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .viewport { padding: 0; gap: 0; }
+  .toolbar { display: none; }
+  .a4 { box-shadow: none; page-break-after: always; break-after: page; }
+  .a4:last-child { page-break-after: auto; break-after: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button id="printBtn" type="button">Print / Save PDF</button>
+</div>
+
+<div class="viewport">
+  <article class="a4">
+
+    <!-- header -->
+    <header class="head">
+      <span class="brand">PESIDZE®</span>
+      <span class="nav">INDEX · WORK · ABOUT · NON-PROFITS · CONTACT</span>
+      <span>EN / DE</span>
+    </header>
+
+    <!-- title -->
+    <div>
+      <span class="eyebrow">— Pro bono work —</span>
+      <h1 class="title">Non-<br/>Profits.</h1>
+      <p class="lede">I work with non-profits fully pro bono. Here's how it works and what I ask in return.</p>
+      <p class="legal-note">This Agreement is available to registered non-profit organisations only. The Organisation must provide their official registration number and proof of non-profit status before the Agreement takes effect. The Service Provider reserves the right to terminate this Agreement if the provided information is found to be inaccurate.</p>
+    </div>
+
+    <!-- stats -->
+    <div class="stats">
+      <div>
+        <span class="l">Hours / month</span>
+        <span class="v">20–30 h</span>
+      </div>
+      <div>
+        <span class="l">Delivery per task</span>
+        <span class="v">3–5 days</span>
+      </div>
+      <div>
+        <span class="l">Revisions / item</span>
+        <span class="v">Up to 2</span>
+      </div>
+      <div>
+        <span class="l">Cost</span>
+        <span class="v">Free</span>
+      </div>
+    </div>
+
+    <!-- how it works -->
+    <section class="section">
+      <h2><span class="num">§ 01</span>How it works</h2>
+      <p>I have a full-time job, so non-profit projects run alongside it. Each project gets 20–30 hours per month — enough for social media design, a website, print materials, and similar work. I work pro bono, with a few conditions that keep the collaboration comfortable for both of us.</p>
+      <ul>
+        <li><b>Official contract required.</b>Even for free work, I ask for a signed agreement. It protects both parties and lets me document volunteer work officially. I issue a proper invoice marked at €0.</li>
+        <li><b>All tasks in writing.</b>Briefs, feedback, change requests — everything via email or a shared document. This helps me plan my time and not lose details.</li>
+        <li><b>3–5 business days per task.</b>I combine this with my main job. Please plan realistic timelines from the start.</li>
+        <li><b>Up to 2 rounds of revisions.</b>If additional rounds are needed, we discuss them separately.</li>
+      </ul>
+    </section>
+
+    <!-- page footer -->
+    <footer class="foot">
+      <span>© 2026 Nicole Shakarishvili · Pesidze®</span>
+      <span>Page 01 / 02</span>
+      <span>pesidze.com</span>
+    </footer>
+
+  </article>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 2 -->
+  <!-- ============================================================ -->
+  <article class="a4 p2">
+
+    <header class="head">
+      <span class="brand">PESIDZE®</span>
+      <span class="nav">NON-PROFITS — CONT'D</span>
+      <span>EN / DE</span>
+    </header>
+
+    <!-- two columns -->
+    <div class="two" style="margin-top: 12mm;">
+      <section class="section" style="margin-top: 0;">
+        <h2><span class="num">§ 02</span>What I don't take on</h2>
+        <p style="margin-top:3mm;">Even with the best intentions, some situations don't fit within my constraints:</p>
+        <ul>
+          <li><b>Urgent tasks.</b>“Needed yesterday” does not fit around a full-time job.</li>
+          <li><b>Projects without a clear brief.</b>I need to understand what I'm designing and why before I start.</li>
+          <li><b>Daily availability.</b>Work that implies on-call responsiveness.</li>
+        </ul>
+      </section>
+
+      <section class="section" style="margin-top: 0;">
+        <h2><span class="num">§ 03</span>What you get</h2>
+        <p style="margin-top:3mm;">Within 20–30 hours per month I can cover:</p>
+        <ul>
+          <li><b>Social media.</b>Posts, stories, templates.</li>
+          <li><b>Web.</b>Website design or updates.</li>
+          <li><b>Print.</b>Posters, leaflets, event programmes.</li>
+          <li><b>Decks &amp; documents.</b>Presentations and similar graphic work.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- how to apply -->
+    <section class="section">
+      <h2><span class="num">§ 04</span>How to apply</h2>
+      <p>If this sounds like a fit — write to me with a short description of your organisation and what you need. I’ll tell you whether I have capacity right now and if the project is something I can take on.</p>
+      <p>Every engagement — even pro bono — comes with an official contract. That’s how I keep things professional and how you can use our collaboration as documented in-kind support.</p>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta">
+      <div class="h">Get in<br/>touch →</div>
+      <div class="meta">
+        <span>Email</span><span class="v">hi@pesidze.com</span>
+        <span style="margin-top:2mm;display:block;">WhatsApp</span><span class="v">+34 685 600 098</span>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="foot">
+      <span>© 2026 Nicole Shakarishvili · Pesidze®</span>
+      <span>Page 02 / 02 · Available for 3 projects · 20 May 2026</span>
+      <span>pesidze.com</span>
+    </footer>
+
+  </article>
+</div>
+
+<script>
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+</script>
+
+</body>
+</html>

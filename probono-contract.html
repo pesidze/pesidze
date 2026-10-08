@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pro Bono Design Services Agreement — Pesidze</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0a0a;
+  --paper: #f4f1ea;
+  --paper-2: #ebe7dc;
+  --muted: #6b6760;
+  --line: rgba(10,10,10,0.18);
+  --display: "Archivo Black", Helvetica, Arial, sans-serif;
+  --body: "Space Grotesk", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --serif: "Instrument Serif", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #1a1a1a; -webkit-font-smoothing: antialiased; }
+.viewport { padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+
+/* A4: 210 × 297 mm */
+.a4 {
+  width: 210mm;
+  height: 297mm;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  padding: 16mm 16mm 14mm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* ── header (every page) ── */
+.head {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 9pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.head .brand { font-family: var(--display); font-size: 12pt; letter-spacing: -0.01em; color: var(--ink); }
+
+/* ── title ── */
+.title-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 10mm;
+  margin-top: 10mm;
+  align-items: end;
+}
+.title {
+  font-family: var(--display);
+  font-size: 38pt;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.title-meta {
+  border-left: 1px solid var(--ink);
+  padding-left: 8mm;
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.title-meta .v { color: var(--ink); display: block; margin-top: 1.5mm; }
+.title-meta .v + span { margin-top: 3mm; display: block; }
+
+.stamp {
+  margin-top: 6mm;
+  display: inline-flex;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 9pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 3mm 5mm;
+}
+
+/* ── parties grid ── */
+.parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--ink);
+  margin-top: 6mm;
+}
+.parties > div {
+  padding: 5mm 5mm;
+  border-right: 1px solid var(--ink);
+}
+.parties > div:last-child { border-right: 0; }
+.parties .role {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3mm;
+}
+.parties .name {
+  font-family: var(--display);
+  font-size: 13pt;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.parties dl {
+  margin-top: 3mm;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2mm 4mm;
+  font-size: 9pt;
+  line-height: 1.4;
+}
+.parties dt {
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.5mm;
+}
+.parties dd { font-size: 9.5pt; }
+.parties dd .blank {
+  display: inline-block;
+  min-width: 28mm;
+  border-bottom: 1px solid var(--ink);
+  height: 12pt;
+  vertical-align: bottom;
+}
+
+/* ── numbered sections ── */
+.clause {
+  margin-top: 5.5mm;
+}
+.clause h2 {
+  display: grid;
+  grid-template-columns: 14mm 1fr;
+  gap: 4mm;
+  align-items: baseline;
+  font-family: var(--display);
+  font-size: 11pt;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  padding-bottom: 2mm;
+  border-bottom: 1px solid var(--ink);
+}
+.clause h2 .n {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.clause p,
+.clause li {
+  font-size: 9pt;
+  line-height: 1.5;
+  margin-top: 2.5mm;
+  text-wrap: pretty;
+}
+.clause ul {
+  list-style: none;
+  margin-top: 2mm;
+  padding-left: 14mm;
+}
+.clause ul li {
+  position: relative;
+  padding-left: 8pt;
+  margin-top: 1.5mm;
+}
+.clause ul li::before {
+  content: "→";
+  position: absolute;
+  left: -10pt;
+  font-family: var(--mono);
+  font-size: 8.5pt;
+  color: var(--muted);
+}
+.clause .body-indent { padding-left: 18mm; }
+.clause .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+  margin-top: 2mm;
+  padding-left: 18mm;
+}
+.clause .grid-2 .lbl {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 1mm;
+}
+.clause .grid-2 .v {
+  font-size: 10pt;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1mm;
+  min-height: 14pt;
+}
+.clause.tight p { margin-top: 1.5mm; }
+.clause.tight ul li { margin-top: 1mm; }
+
+/* ── signatures ── */
+.sigs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10mm;
+  margin-top: 10mm;
+}
+.sigbox {
+  border: 1px solid var(--ink);
+  padding: 6mm;
+  display: flex; flex-direction: column;
+}
+.sigbox .pad {
+  height: 28mm;
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14pt;
+  color: var(--muted);
+  display: flex; align-items: end;
+  padding-bottom: 2mm;
+}
+.sigbox .meta {
+  margin-top: 4mm;
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.sigbox .meta .v { color: var(--ink); display: block; margin-top: 1mm; font-family: var(--body); letter-spacing: 0; text-transform: none; font-size: 10pt; }
+.sigbox .date-line {
+  margin-top: 4mm;
+  display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: end;
+}
+.sigbox .date-line .dline {
+  border-bottom: 1px solid var(--ink);
+  height: 10mm;
+}
+
+/* ── footer (every page) ── */
+.foot {
+  margin-top: auto;
+  border-top: 1px solid var(--ink);
+  padding-top: 3mm;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 7pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.foot .brand { font-family: var(--display); color: var(--ink); letter-spacing: -0.01em; font-size: 8pt; }
+
+/* ── toolbar ── */
+.toolbar {
+  position: fixed;
+  top: 16px; left: 16px;
+  display: flex; gap: 8px;
+  z-index: 20;
+}
+.toolbar button {
+  background: rgba(244,241,234,0.06);
+  color: #f4f1ea;
+  border: 1px solid rgba(244,241,234,0.18);
+  padding: 8px 14px;
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  cursor: pointer;
+}
+.toolbar button:hover { background: rgba(244,241,234,0.14); }
+
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: var(--paper) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .viewport { padding: 0; gap: 0; }
+  .toolbar { display: none; }
+  .a4 { box-shadow: none; page-break-after: always; break-after: page; }
+  .a4:last-child { page-break-after: auto; break-after: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button id="printBtn" type="button">Print / Save PDF</button>
+</div>
+
+<div class="viewport">
+
+  <!-- ============================================================ -->
+  <!-- PAGE 1                                                      -->
+  <!-- ============================================================ -->
+  <article class="a4">
+    <header class="head">
+      <span class="brand">PESIDZE®</span>
+      <span>Pro Bono Design Services Agreement</span>
+      <span>20 May 2026</span>
+    </header>
+
+    <div class="title-row">
+      <div>
+        <h1 class="title">Pro Bono<br/>Design Services<br/>Agreement.</h1>
+        <span class="stamp">● Voluntary · Unpaid</span>
+      </div>
+      <div class="title-meta">
+        <span>Date</span><span class="v">20 May 2026</span>
+        <span>Place</span><span class="v">Berlin, Germany · ES</span>
+        <span>Governing law</span><span class="v">Germany</span>
+        <span>Document</span><span class="v">v 2026.05 · EN</span>
+      </div>
+    </div>
+
+    <!-- § 01 PARTIES -->
+    <section class="clause">
+      <h2><span class="n">§ 01</span><span>Parties</span></h2>
+      <p>This Pro Bono Design Services Agreement ("Agreement") is entered into between:</p>
+    </section>
+
+    <div class="parties">
+      <div>
+        <span class="role">Service provider</span>
+        <span class="name">Nicole Shakarishvili</span>
+        <dl>
+          <dt>Status</dt><dd>Autónoma</dd>
+          <dt>NIF / NIE</dt><dd><span class="blank"></span></dd>
+          <dt>City</dt><dd>Berlin, Germany · Germany</dd>
+          <dt>Web</dt><dd>pesidze.com</dd>
+          <dt>Email</dt><dd>hi@pesidze.com</dd>
+          <dt>Phone</dt><dd>+34 685 600 098</dd>
+        </dl>
+      </div>
+      <div>
+        <span class="role">Organisation / Client</span>
+        <span class="name">______________________</span>
+        <dl>
+          <dt>Reg. №</dt><dd><span class="blank"></span></dd>
+          <dt>Address</dt><dd><span class="blank"></span></dd>
+          <dt>Email</dt><dd><span class="blank"></span></dd>
+          <dt>Contact</dt><dd><span class="blank"></span></dd>
+          <dt>Role / Title</dt><dd><span class="blank"></span></dd>
+          <dt>Phone</dt><dd><span class="blank"></span></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- § 02 NATURE -->
+    <section class="clause">
+      <h2><span class="n">§ 02</span><span>Nature of Agreement</span></h2>
+      <p>This Agreement is entered into on a voluntary, pro bono basis. The Service Provider agrees to provide design services free of charge as a goodwill contribution. No payment, fee, or financial compensation of any kind is due under this Agreement.</p>
+    </section>
+
+    <!-- § 03 SCOPE -->
+    <section class="clause">
+      <h2><span class="n">§ 03</span><span>Scope of Services</span></h2>
+      <p>The Service Provider agrees to provide graphic and UI/UX design services as agreed between the parties each month. Services may include, but are not limited to:</p>
+      <ul>
+        <li>Social media visual design (posts, Stories, promotional graphics)</li>
+        <li>Landing page and website design</li>
+        <li>Print materials (menus, posters, flyers, price lists)</li>
+        <li>Brand visual identity (colours, typography, templates — logo excluded)</li>
+        <li>Ongoing website maintenance and content updates upon request</li>
+      </ul>
+      <p>The specific scope for each month will be agreed in writing (email or message) at the start of each period. The package may be adjusted monthly based on the Organisation's needs.</p>
+    </section>
+
+    <!-- § 04 HOURS -->
+    <section class="clause">
+      <h2><span class="n">§ 04</span><span>Working Hours</span></h2>
+      <p>This Agreement covers up to <b>20 (twenty) hours of design work per calendar month</b>. Unused hours do not carry over. Work beyond the monthly allowance may be declined or rescheduled to the following month at the Service Provider's discretion.</p>
+    </section>
+
+    <footer class="foot">
+      <span class="brand">PESIDZE®</span>
+      <span>Pro Bono Design Services Agreement · Page 01 / 03</span>
+      <span>pesidze.com</span>
+    </footer>
+  </article>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 2                                                      -->
+  <!-- ============================================================ -->
+  <article class="a4">
+    <header class="head">
+      <span class="brand">PESIDZE®</span>
+      <span>Pro Bono Design Services Agreement</span>
+      <span>20 May 2026</span>
+    </header>
+
+    <!-- § 05 RESPONSE -->
+    <section class="clause" style="margin-top: 10mm;">
+      <h2><span class="n">§ 05</span><span>Response &amp; Delivery Time</span></h2>
+      <p>The Service Provider commits to responding to all requests and delivering completed work within <b>3–5 business days</b> from receipt of the request, provided all necessary materials and information have been supplied. The Service Provider carries out this work alongside other professional commitments; urgent or same-day requests cannot be guaranteed.</p>
+    </section>
+
+    <!-- § 06 REVISIONS -->
+    <section class="clause">
+      <h2><span class="n">§ 06</span><span>Revisions</span></h2>
+      <p>Each deliverable includes <b>up to 2 (two) rounds of revisions</b>. Additional revision rounds may be accommodated at the Service Provider's discretion within the monthly hour allowance.</p>
+    </section>
+
+    <!-- § 07 TERM -->
+    <section class="clause">
+      <h2><span class="n">§ 07</span><span>Term &amp; Termination</span></h2>
+      <p>This Agreement commences on the date signed below and is valid for one (1) calendar month. It renews automatically on a month-to-month basis until either party terminates it by sending a written notice via email to the other party. Termination takes effect at the end of the current monthly period following the notice.</p>
+      <div class="grid-2">
+        <div>
+          <span class="lbl">Service Provider — termination email</span>
+          <div class="v">hi@pesidze.com</div>
+        </div>
+        <div>
+          <span class="lbl">Organisation — termination email</span>
+          <div class="v">&nbsp;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 08 IP -->
+    <section class="clause">
+      <h2><span class="n">§ 08</span><span>Intellectual Property</span></h2>
+      <p>Upon delivery of each piece of work, the Organisation receives full rights to use the final deliverables for their non-commercial purposes. The Service Provider retains the right to include the work in their portfolio unless otherwise agreed in writing.</p>
+      <p>Working files and editable source files remain the property of the Service Provider unless their transfer is explicitly agreed.</p>
+    </section>
+
+    <!-- § 09 CONFIDENTIALITY -->
+    <section class="clause">
+      <h2><span class="n">§ 09</span><span>Confidentiality</span></h2>
+      <p>Both parties agree to keep confidential any sensitive information shared during the course of this Agreement and not to disclose it to third parties without prior written consent.</p>
+    </section>
+
+    <!-- § 10 GOODWILL -->
+    <section class="clause">
+      <h2><span class="n">§ 10</span><span>Goodwill Exchange <span style="font-family:var(--mono); font-size:7pt; letter-spacing:0.14em; color:var(--muted); margin-left:6pt;">(Optional)</span></span></h2>
+      <p>While no payment is required, the Organisation is encouraged — though not obligated — to support the Service Provider in one or more of the following ways:</p>
+      <ul>
+        <li>Provide a written letter of recommendation on the Organisation's letterhead</li>
+        <li>Share a testimonial or review for the Service Provider's portfolio</li>
+        <li>Mention or tag the Service Provider on social media when sharing work</li>
+        <li>Introduce the Service Provider to other organisations or businesses that may benefit from design services</li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      <span class="brand">PESIDZE®</span>
+      <span>Pro Bono Design Services Agreement · Page 02 / 03</span>
+      <span>pesidze.com</span>
+    </footer>
+  </article>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 3                                                      -->
+  <!-- ============================================================ -->
+  <article class="a4">
+    <header class="head">
+      <span class="brand">PESIDZE®</span>
+      <span>Pro Bono Design Services Agreement</span>
+      <span>20 May 2026</span>
+    </header>
+
+    <!-- § 11 LIABILITY -->
+    <section class="clause" style="margin-top: 10mm;">
+      <h2><span class="n">§ 11</span><span>Limitation of Liability</span></h2>
+      <p>As this is a voluntary agreement, the Service Provider's liability is limited to the greatest extent permitted by law. The Service Provider is not liable for indirect, consequential, or incidental damages arising from the services provided.</p>
+    </section>
+
+    <!-- § 12 LAW -->
+    <section class="clause">
+      <h2><span class="n">§ 12</span><span>Governing Law</span></h2>
+      <p>This Agreement shall be governed by and construed in accordance with the laws of Germany. Any disputes shall be resolved in the courts of Berlin.</p>
+    </section>
+
+    <!-- § 13 SIGNATURES -->
+    <section class="clause">
+      <h2><span class="n">§ 13</span><span>Signatures</span></h2>
+      <p>By signing below, both parties acknowledge and agree to the terms of this Agreement.</p>
+    </section>
+
+    <div class="sigs">
+      <div class="sigbox">
+        <span class="role" style="font-family:var(--mono); font-size:8pt; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:4mm; display:block;">Service Provider</span>
+        <div class="pad">signature</div>
+        <div class="meta">
+          <span>Name</span><span class="v">Nicole Shakarishvili</span>
+        </div>
+        <div class="date-line">
+          <span style="font-family:var(--mono); font-size:8pt; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Date</span>
+          <span class="dline"></span>
+        </div>
+      </div>
+
+      <div class="sigbox">
+        <span class="role" style="font-family:var(--mono); font-size:8pt; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:4mm; display:block;">Organisation Representative</span>
+        <div class="pad">signature</div>
+        <div class="meta">
+          <span>Name &amp; Title</span><span class="v">&nbsp;</span>
+        </div>
+        <div class="date-line">
+          <span style="font-family:var(--mono); font-size:8pt; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Date</span>
+          <span class="dline"></span>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 14mm; font-family: var(--serif); font-style: italic; font-size: 12pt; line-height: 1.4; color: var(--muted); text-align: center;">
+      Thank you for the work you do. — Nicole
+    </p>
+
+    <footer class="foot">
+      <span class="brand">PESIDZE®</span>
+      <span>Pro Bono Design Services Agreement · Page 03 / 03</span>
+      <span>pesidze.com</span>
+    </footer>
+  </article>
+
+</div>
+
+<script>
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+</script>
+
+</body>
+</html>

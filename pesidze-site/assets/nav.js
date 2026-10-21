@@ -23,7 +23,7 @@ li.addEventListener('focusout',function(e){if(!li.contains(e.relatedTarget)&&mat
 document.addEventListener('click',function(e){if(!li.contains(e.target))set(false)});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&li.classList.contains('open')){set(false);b.focus()}});}
 function init(){var nav=document.querySelector('header.nav');if(!nav||nav.querySelector('.nav-toggle'))return;var wrap=nav.querySelector('.wrap'),ul=nav.querySelector('ul');if(!wrap||!ul)return;
-if(!document.getElementById('nav-mobile-css')){var s=document.createElement('style');s.id='nav-mobile-css';s.textContent=css;document.head.appendChild(s)}
+if(!document.getElementById('nav-mobile-css')){var s=Object.assign(document.createElement('style'),{nonce:'77f37wi73'});s.id='nav-mobile-css';s.textContent=css;document.head.appendChild(s)}
 addSub(ul);
 ul.id=ul.id||'site-menu';var b=document.createElement('button');b.type='button';b.className='nav-toggle';b.setAttribute('aria-expanded','false');b.setAttribute('aria-controls',ul.id);b.innerHTML='<i aria-hidden="true"></i><span class="lbl">Menu</span>';wrap.appendChild(b);
 function set(o){nav.classList.toggle('nav-open',o);b.setAttribute('aria-expanded',o?'true':'false')}

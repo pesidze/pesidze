@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pesidze — Ads</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
-<style>
+<style nonce="77f37wi73">
 :root {
   --ink: #f4f1ea;
   --paper: #0a0a0a;
@@ -488,7 +488,7 @@ html, body {
   </div>
 </div>
 
-<script>
+<script nonce="77f37wi73">
 // scale each ad-canvas to fit its frame
 function fit() {
   document.querySelectorAll('.frame').forEach(f => {
@@ -505,7 +505,7 @@ window.addEventListener('resize', fit);
 new ResizeObserver(fit).observe(document.body);
 </script>
 
-<script>
+<script nonce="77f37wi73">
 // auto-print after fonts + layout settle
 (async () => {
   try { if (document.fonts && document.fonts.ready) await document.fonts.ready; } catch(e) {}

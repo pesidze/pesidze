@@ -10,7 +10,7 @@ var css='.rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-b
 '.btn span{display:inline-block;transition:transform .25s}.btn:hover span{transform:translateX(5px)}'+
 '.wbar .b{transform:scaleX(0);transform-origin:0 50%;transition:transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rd,0ms)}.wbar li.in .b{transform:none}'+
 '.cw-card,.duo>div{transition:transform .3s cubic-bezier(.2,.8,.2,1)}.cw-card:hover,.duo>div:hover{transform:translateY(-6px)}';
-var s=document.createElement('style');s.textContent=reduce?'.factors>div:hover{background:color-mix(in srgb,currentColor 7%,transparent)}':css;document.head.appendChild(s);
+var s=Object.assign(document.createElement('style'),{nonce:'77f37wi73'});s.textContent=reduce?'.factors>div:hover{background:color-mix(in srgb,currentColor 7%,transparent)}':css;document.head.appendChild(s);
 if(reduce)return;
 var h=document.querySelector('.svc-hero h1');
 if(h){var words=h.textContent.trim().split(/\s+/);h.setAttribute('aria-label',h.textContent.trim());h.innerHTML=words.map(function(w,i){return '<span class="w" aria-hidden="true"><span style="--i:'+i+'">'+w+'</span></span>'}).join(' ')}

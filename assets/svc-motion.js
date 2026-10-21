@@ -13,7 +13,7 @@ var css='.rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-b
 var s=Object.assign(document.createElement('style'),{nonce:'77f37wi73'});s.textContent=reduce?'.factors>div:hover{background:color-mix(in srgb,currentColor 7%,transparent)}':css;document.head.appendChild(s);
 if(reduce)return;
 var h=document.querySelector('.svc-hero h1');
-if(h){var words=h.textContent.trim().split(/\s+/);h.setAttribute('aria-label',h.textContent.trim());h.innerHTML=words.map(function(w,i){return '<span class="w" aria-hidden="true"><span style="--i:'+i+'">'+w+'</span></span>'}).join(' ')}
+if(h){var words=h.textContent.trim().split(/\s+/);h.setAttribute('aria-label',h.textContent.trim());h.innerHTML=words.map(function(w,i){return '<span class="w" aria-hidden="true"><span>'+w+'</span></span>'}).join(' ');h.querySelectorAll('.w>span').forEach(function(el,i){el.style.setProperty('--i',i)})}
 var groups=['.sec-head','.factors','.stats','.duo','.svc-list','.wbar','.cw-grid','.wbar-h','.cta .wrap>div'];
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 groups.forEach(function(sel){document.querySelectorAll(sel).forEach(function(g){
